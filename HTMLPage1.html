@@ -1,0 +1,61 @@
+﻿
+<div class="Customer-list-table">
+    <mat-card>
+        <mat-card-content>
+            <div fxLayoutAlign="center center">
+                <button mat-mini-fab color="accent" matTooltip="Add Customer" (click)="addNewCustomer()">
+                    <mat-icon>add</mat-icon>
+                </button>
+                <mat-form-field fxFlex="60%" style="margin-left:20px">
+                    <input type="text" matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+                </mat-form-field>
+
+            </div>
+            <mat-table [dataSource]="dataSource" matSort>
+                <ng-container matColumnDef="customerACN">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Account Num </mat-header-cell>
+                    <mat-cell *matCellDef="let element">{{element.customerACN}}</mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="companyName">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> companyName </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.companyName }} </mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="customersOrderCount">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Ord(qty) </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.customersOrderCount }} </mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="customerInvoiceCount">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Inv(qty) </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.customerInvoiceCount }} </mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="actions">
+                    <mat-header-cell *matHeaderCellDef>
+                        <button mat-icon-button color="accent">
+                            <!-- <mat-icon>menu</mat-icon> -->
+                        </button>
+                    </mat-header-cell>
+                    <mat-cell *matCellDef="let row">
+                        <button mat-button mat-icon-button color="primary" matTooltip="Edit Customer" focusable="false" (click)="editCustomer(row)">
+                            <mat-icon>edit</mat-icon>
+                        </button>
+                        <button mat-button mat-icon-button color="primary" matTooltip="Delete Customer" focusable="false" (click)="deleteCustomer(row)">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                        <button mat-button mat-icon-button color="primary" matTooltip="Open Customer Orders" focusable="false" (click)="openCustomerOrders(row)">
+                            <mat-icon>add_shopping_cart</mat-icon>
+                        </button>
+                        <button mat-button mat-icon-button color="primary" matTooltip="Open Customer Invoice" focusable="false" (click)="openCustomerInvoices(row)">
+                            <mat-icon>receipt</mat-icon>
+                        </button>
+                    </mat-cell>
+                </ng-container>
+                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+            </mat-table>
+            <mat-paginator [pageSize]="10"
+                           [pageSizeOptions]="[5, 10, 20]"
+                           [showFirstLastButtons]="true">
+            </mat-paginator>
+        </mat-card-content>
+    </mat-card>
+</div>

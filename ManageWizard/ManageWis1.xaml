@@ -1,0 +1,22 @@
+﻿<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:ManageWizard" x:Class="ManageWis1"
+    Title="Data wizard" Height="600" Width="738" FontFamily="Segoe UI Semilight" FontSize="16" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="580*"/>
+        </Grid.RowDefinitions>
+        <ContentControl x:Name="DisplayWizard" Margin="5" Grid.Row="1"/>
+        <!--<local:TablesStep1Control x:Name="Step1" HorizontalAlignment="Stretch"  Margin="10" VerticalAlignment="Stretch" Grid.Row="1" Height="Auto" Width="Auto" />-->
+        <StackPanel HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Orientation="Horizontal" Width="367">
+            <Button x:Name="PreviewsStep" Content="Pre" Margin="5" Width="100"/>
+            <Button x:Name="NextStep" Content="Next" Margin="5" Width="100"/>
+            <Button x:Name="FinishStep" Content="Finish" Margin="5" Width="100"/>
+        </StackPanel>
+
+
+
+    </Grid>
+</Window>

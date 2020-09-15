@@ -1,0 +1,501 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{39D787B8-1099-471E-9A9E-BA0C24328DAF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>MSAccessServer.My.MyApplication</StartupObject>
+    <RootNamespace>MSAccessServer</RootNamespace>
+    <AssemblyName>MSAccessServer</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>MSAccessServer.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>MSAccessServer.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>application-coins.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="adodb, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CSharpControls\csharpTabUserControl.Designer.vb">
+      <DependentUpon>csharpTabUserControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CSharpControls\csharpTabUserControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomCotrols\CustomToolStrip.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomCotrols\DatabaseObject.Designer.vb">
+      <DependentUpon>DatabaseObject.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CustomCotrols\DatabaseObject.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomCotrols\Helperclass.vb" />
+    <Compile Include="CustomCotrols\TreeNodeTableDomain.vb" />
+    <Compile Include="CustomCotrols\TreeViewLinqDetails.vb" />
+    <Compile Include="CustomCotrols\TreeViewManager.vb" />
+    <Compile Include="CustomCotrols\WPFTreeView.vb" />
+    <Compile Include="Editor\ASPNetCodeColoriser.vb" />
+    <Compile Include="Editor\CodeEditor.vb" />
+    <Compile Include="Editor\CodeLanguage.vb" />
+    <Compile Include="Editor\Coloriser.vb" />
+    <Compile Include="Editor\ColorToken.vb" />
+    <Compile Include="Editor\CSSCodeColoriser.vb" />
+    <Compile Include="Editor\IColorTokenProvider.vb" />
+    <Compile Include="Editor\JScriptCodeColoriser.vb" />
+    <Compile Include="Editor\ObjectDumper.vb" />
+    <Compile Include="Editor\SQLCodeColoriser.vb" />
+    <Compile Include="Editor\UnknownCodeColoriser.vb" />
+    <Compile Include="Editor\VBCodeColoriser.vb" />
+    <Compile Include="Editor\XMLCodeColoriser.vb" />
+    <Compile Include="FileManager\SaveDBToXML.vb" />
+    <Compile Include="FormMain.designer.vb">
+      <DependentUpon>FormMain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManager\FormGeneRateCsharpEntityframeworkFiles.Designer.vb">
+      <DependentUpon>FormGeneRateCsharpEntityframeworkFiles.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormManager\FormGeneRateCsharpEntityframeworkFiles.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManager\FormListTablesSelect.Designer.vb">
+      <DependentUpon>FormListTablesSelect.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormManager\FormListTablesSelect.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManager\FormResultsDisplay.Designer.vb">
+      <DependentUpon>FormResultsDisplay.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormManager\FormResultsDisplay.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManager\FormSelectTables.Designer.vb">
+      <DependentUpon>FormSelectTables.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormManager\FormSelectTables.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManager\FormSelectViews.Designer.vb">
+      <DependentUpon>FormSelectViews.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormManager\FormSelectViews.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManager\FormSqlInsertGenerator.Designer.vb">
+      <DependentUpon>FormSqlInsertGenerator.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormManager\FormSqlInsertGenerator.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="SQLControls\ModuleData.vb" />
+    <Compile Include="SQLControls\SQLEditorUserControl.Designer.vb">
+      <DependentUpon>SQLEditorUserControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SQLControls\SQLEditorUserControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TemplateHelper\ManageTemplates.vb" />
+    <Compile Include="Tools\FormComboBoxTask.Designer.vb">
+      <DependentUpon>FormComboBoxTask.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\FormComboBoxTask.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VBControls\AspClassHelper.vb" />
+    <Compile Include="VBControls\DurandalHelper.vb" />
+    <Compile Include="VBControls\FormLinqDesigner.designer.vb">
+      <DependentUpon>FormLinqDesigner.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VBControls\FormLinqDesigner.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VBControls\FormSaveLocation.Designer.vb">
+      <DependentUpon>FormSaveLocation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VBControls\FormSaveLocation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VBControls\HelperLinqTable.vb" />
+    <Compile Include="VBControls\ManageTableDependency.vb" />
+    <Compile Include="VBControls\vbTabUserControl.Designer.vb">
+      <DependentUpon>vbTabUserControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VBControls\vbTabUserControl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WPFApplication\dataset\dsHelper.vb" />
+    <Compile Include="WPFApplication\Developer\ClassControls.vb" />
+    <Compile Include="WPFApplication\Developer\FormAddColumn.Designer.vb">
+      <DependentUpon>FormAddColumn.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WPFApplication\Developer\FormAddColumn.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WPFApplication\Developer\FormEditColumn.Designer.vb">
+      <DependentUpon>FormEditColumn.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WPFApplication\Developer\FormEditColumn.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WPFApplication\Developer\FormEditColumns.Designer.vb">
+      <DependentUpon>FormEditColumns.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WPFApplication\Developer\FormEditColumns.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WPFApplication\Developer\FormWPFComboBox.Designer.vb">
+      <DependentUpon>FormWPFComboBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WPFApplication\Developer\FormWPFComboBox.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WPFApplication\Developer\FormWPFDesigner.Designer.vb">
+      <DependentUpon>FormWPFDesigner.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WPFApplication\Developer\FormWPFDesigner.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CSharpControls\csharpTabUserControl.resx">
+      <DependentUpon>csharpTabUserControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomCotrols\DatabaseObject.resx">
+      <DependentUpon>DatabaseObject.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManager\FormGeneRateCsharpEntityframeworkFiles.resx">
+      <DependentUpon>FormGeneRateCsharpEntityframeworkFiles.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManager\FormListTablesSelect.resx">
+      <DependentUpon>FormListTablesSelect.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManager\FormResultsDisplay.resx">
+      <DependentUpon>FormResultsDisplay.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManager\FormSelectTables.resx">
+      <DependentUpon>FormSelectTables.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManager\FormSelectViews.resx">
+      <DependentUpon>FormSelectViews.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManager\FormSqlInsertGenerator.resx">
+      <DependentUpon>FormSqlInsertGenerator.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SQLControls\SQLEditorUserControl.resx">
+      <DependentUpon>SQLEditorUserControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\FormComboBoxTask.resx">
+      <DependentUpon>FormComboBoxTask.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VBControls\FormLinqDesigner.resx">
+      <DependentUpon>FormLinqDesigner.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VBControls\FormSaveLocation.resx">
+      <DependentUpon>FormSaveLocation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VBControls\vbTabUserControl.resx">
+      <DependentUpon>vbTabUserControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WPFApplication\Developer\FormEditColumn.resx">
+      <DependentUpon>FormEditColumn.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WPFApplication\Developer\FormEditColumns.resx">
+      <DependentUpon>FormEditColumns.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WPFApplication\Developer\FormWPFComboBox.resx">
+      <DependentUpon>FormWPFComboBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WPFApplication\Developer\FormWPFDesigner.resx">
+      <DependentUpon>FormWPFDesigner.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CustomCotrols\bin\Debug\MSAccessServer.exe.config" />
+    <None Include="CustomCotrols\bin\Debug\MSAccessServer.vshost.exe.config" />
+    <None Include="CustomCotrols\bin\Debug\MSAccessServer.vshost.exe.manifest" />
+    <None Include="CustomCotrols\bin\Release\MSAccessServer.exe.config" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DBCodeGenerator\DBCodeGenerator.vbproj">
+      <Project>{7ed54a54-381b-460c-8ee5-0d3b9a1030ba}</Project>
+      <Name>DBCodeGenerator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DBExtenderLib\DBExtenderLib.vbproj">
+      <Project>{85128da1-b67c-428f-a3c0-6c17d3cf65f5}</Project>
+      <Name>DBExtenderLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ManageWizard\ManageWizard.vbproj">
+      <Project>{f728c6b2-7785-43da-a230-2b9fa218bd3b}</Project>
+      <Name>ManageWizard</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ManagLinqFile\ManagLinqFile.vbproj">
+      <Project>{04774724-6a42-46c8-a633-24e8ef371d3d}</Project>
+      <Name>ManagLinqFile</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MSAccessManager\MSAccessManager.vbproj">
+      <Project>{e9fb3787-6bfb-4545-90f7-9fd35bc0c768}</Project>
+      <Name>MSAccessManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MSSqlManager\MSSqlManager.vbproj">
+      <Project>{eac32ceb-1393-4f95-872e-3e7de1d2c7c3}</Project>
+      <Name>MSSqlManager</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="application-coins.ico" />
+    <Content Include="bin\Debug\Templates\ASP\Maintemplate.txt" />
+    <Content Include="bin\Debug\Templates\Csharp\Entities\csharpentityClass.txt" />
+    <Content Include="bin\Debug\Templates\Csharp\Entities\csharpentityConfiguration.txt" />
+    <Content Include="bin\Debug\Templates\Csharp\Entities\csharpEntityDataContext.txt" />
+    <Content Include="bin\Debug\Templates\DataContextTemplate.txt" />
+    <Content Include="bin\Debug\Templates\GridView.txt" />
+    <Content Include="bin\Debug\Templates\Knockout\demoTemp.txt" />
+    <Content Include="bin\Debug\Templates\Knockout\demoVMTemp.txt" />
+    <Content Include="bin\Debug\Templates\Knockout\MasterDetailsTemplate.txt" />
+    <Content Include="bin\Debug\Templates\Knockout\MasterDetailsTmp.txt" />
+    <Content Include="bin\Debug\Templates\Knockout\SimpleKoTemplate.txt" />
+    <Content Include="bin\Debug\Templates\Knockout\SimpleKoVMTemplate.txt" />
+    <Content Include="bin\Debug\Templates\Knockout\tableDataContext.txt" />
+    <Content Include="bin\Debug\Templates\Knockout\vmMasterTemplate.txt" />
+    <Content Include="bin\Debug\Templates\Knockout\vmTemplate.txt" />
+    <Content Include="bin\Debug\Templates\LinqTableTemplate.txt" />
+    <Content Include="bin\Debug\Templates\ManageDataContext.txt" />
+    <Content Include="bin\Debug\Templates\MVCAJAXController.txt" />
+    <Content Include="bin\Debug\Templates\MVCAJAXListPage.txt" />
+    <Content Include="bin\Debug\Templates\SilverlightPagelist.txt" />
+    <Content Include="bin\Debug\Templates\VB\Entity\CustomDatabaseInitializer.txt" />
+    <Content Include="bin\Debug\Templates\VB\Entity\VBEntityClass.txt" />
+    <Content Include="bin\Debug\Templates\VB\Entity\VBEntityConfiguration.txt" />
+    <Content Include="bin\Debug\Templates\VB\Entity\VBEntityDataContext.txt" />
+    <Content Include="CustomCotrols\bin\Debug\DBCodeGenerator.dll" />
+    <Content Include="CustomCotrols\bin\Debug\DBCodeGenerator.pdb" />
+    <Content Include="CustomCotrols\bin\Debug\DBCodeGenerator.xml" />
+    <Content Include="CustomCotrols\bin\Debug\DBExtenderLib.dll" />
+    <Content Include="CustomCotrols\bin\Debug\DBExtenderLib.pdb" />
+    <Content Include="CustomCotrols\bin\Debug\DBExtenderLib.xml" />
+    <Content Include="CustomCotrols\bin\Debug\ManagLinqFile.dll" />
+    <Content Include="CustomCotrols\bin\Debug\ManagLinqFile.pdb" />
+    <Content Include="CustomCotrols\bin\Debug\ManagLinqFile.xml" />
+    <Content Include="CustomCotrols\bin\Debug\MSAccessManager.dll" />
+    <Content Include="CustomCotrols\bin\Debug\MSAccessManager.pdb" />
+    <Content Include="CustomCotrols\bin\Debug\MSAccessManager.xml" />
+    <Content Include="CustomCotrols\bin\Debug\MSAccessServer.exe" />
+    <Content Include="CustomCotrols\bin\Debug\MSAccessServer.pdb" />
+    <Content Include="CustomCotrols\bin\Debug\MSAccessServer.vshost.exe" />
+    <Content Include="CustomCotrols\bin\Debug\MSAccessServer.xml" />
+    <Content Include="CustomCotrols\bin\Debug\MSSqlManager.dll" />
+    <Content Include="CustomCotrols\bin\Debug\MSSqlManager.pdb" />
+    <Content Include="CustomCotrols\bin\Debug\MSSqlManager.xml" />
+    <Content Include="CustomCotrols\bin\Debug\Templates\DataContextTemplate.txt" />
+    <Content Include="CustomCotrols\bin\Debug\Templates\GridView.txt" />
+    <Content Include="CustomCotrols\bin\Debug\Templates\LinqTableTemplate.txt" />
+    <Content Include="CustomCotrols\bin\Debug\Templates\ManageDataContext.txt" />
+    <Content Include="CustomCotrols\bin\Debug\Templates\SilverlightPagelist.txt" />
+    <Content Include="CustomCotrols\bin\Debug\Templates\TONY.txt" />
+    <Content Include="CustomCotrols\bin\Release\DBCodeGenerator.dll" />
+    <Content Include="CustomCotrols\bin\Release\DBCodeGenerator.pdb" />
+    <Content Include="CustomCotrols\bin\Release\DBCodeGenerator.xml" />
+    <Content Include="CustomCotrols\bin\Release\DBExtenderLib.dll" />
+    <Content Include="CustomCotrols\bin\Release\DBExtenderLib.pdb" />
+    <Content Include="CustomCotrols\bin\Release\DBExtenderLib.xml" />
+    <Content Include="CustomCotrols\bin\Release\ManagLinqFile.dll" />
+    <Content Include="CustomCotrols\bin\Release\ManagLinqFile.pdb" />
+    <Content Include="CustomCotrols\bin\Release\ManagLinqFile.xml" />
+    <Content Include="CustomCotrols\bin\Release\MSAccessManager.dll" />
+    <Content Include="CustomCotrols\bin\Release\MSAccessManager.pdb" />
+    <Content Include="CustomCotrols\bin\Release\MSAccessManager.xml" />
+    <Content Include="CustomCotrols\bin\Release\MSAccessServer.exe" />
+    <Content Include="CustomCotrols\bin\Release\MSAccessServer.pdb" />
+    <Content Include="CustomCotrols\bin\Release\MSAccessServer.xml" />
+    <Content Include="CustomCotrols\bin\Release\WPFApplicationManager.exe" />
+    <Content Include="CustomCotrols\bin\Release\WPFApplicationManager.pdb" />
+    <Content Include="CustomCotrols\bin\Release\WPFApplicationManager.xml" />
+    <None Include="Resources\script-friend.png" />
+    <None Include="Resources\script-info.png" />
+    <None Include="Resources\webToolStripStatusLabel.Image.png" />
+    <None Include="Resources\Webcontrol_FormView.bmp" />
+    <None Include="Resources\Webcontrol_Detailsview.bmp" />
+    <None Include="Resources\Webcontrol_Dataview.bmp" />
+    <None Include="Resources\Webcontrol_Datasetdatasrc.bmp" />
+    <None Include="Resources\Web.png" />
+    <None Include="Resources\VSProject_webform.bmp" />
+    <None Include="Resources\VBProject.png" />
+    <None Include="Resources\VBFunctions.png" />
+    <None Include="Resources\vbclassinfo.png" />
+    <None Include="Resources\VBBLL.png" />
+    <None Include="Resources\UndoDoc.png" />
+    <None Include="Resources\Standbygreen.png" />
+    <None Include="Resources\StandbyCyan.png" />
+    <None Include="Resources\standbyblue.png" />
+    <None Include="Resources\SQLMobile.png" />
+    <None Include="Resources\SQLFile.png" />
+    <None Include="Resources\silverlightcontrol.png" />
+    <None Include="Resources\silverlight.png" />
+    <None Include="Resources\script-option.png" />
+    <None Include="Resources\script-export.png" />
+    <None Include="Resources\script-design.png" />
+    <None Include="Resources\script.png" />
+    <None Include="Resources\SaveButton.png" />
+    <None Include="Resources\Save.bmp" />
+    <None Include="Resources\Run.bmp" />
+    <None Include="Resources\RiaClass.png" />
+    <None Include="Resources\RiaClass.bmp" />
+    <None Include="Resources\RefreshDoc.png" />
+    <None Include="Resources\PrintDoc.png" />
+    <None Include="Resources\Pencil.png" />
+    <None Include="Resources\Paste.bmp" />
+    <None Include="Resources\OpenDB.png" />
+    <None Include="Resources\NewDoc.png" />
+    <None Include="Resources\MVCProject.png" />
+    <None Include="Resources\mvcPages.png" />
+    <None Include="Resources\mvcControls.png" />
+    <None Include="Resources\MSAccessCnn.png" />
+    <None Include="Resources\LinqVB.png" />
+    <None Include="Resources\JSScript.png" />
+    <None Include="Resources\EntityFramework.png" />
+    <None Include="Resources\EditDSTag-Blue.png" />
+    <None Include="Resources\DSSave.png" />
+    <None Include="Resources\domainServices.png" />
+    <None Include="Resources\DataForm.png" />
+    <None Include="Resources\DataEntity.png" />
+    <None Include="Resources\DatabaseScript1.png" />
+    <None Include="Resources\DatabaseScript.png" />
+    <None Include="Resources\DatabaseIcon.png" />
+    <None Include="Resources\Cut.bmp" />
+    <None Include="Resources\Copy.bmp" />
+    <None Include="Resources\Control_Form.bmp" />
+    <None Include="Resources\Control_DataGridView.bmp" />
+    <None Include="Resources\Control_DataGrid.bmp" />
+    <None Include="Resources\Control_ComboBox.bmp" />
+    <None Include="Resources\Clipboard Paste.png" />
+    <None Include="Resources\Clipboard Cut.png" />
+    <None Include="Resources\Clipboard Copy.png" />
+    <None Include="Resources\ChildWindow.png" />
+    <None Include="Resources\blueheader.bmp" />
+    <None Include="Resources\AspProject.png" />
+    <None Include="Resources\AspCointrols.png" />
+    <None Include="Resources\AddTableHS.png" />
+    <None Include="Resources\Accicons.png" />
+    <None Include="Resources\Wpfarp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="WPFApplication\FormDisplay\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

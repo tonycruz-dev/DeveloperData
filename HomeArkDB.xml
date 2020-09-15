@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VBSpiderManager>
+  <Database Name="HomeArkDev">
+    <Connection ConnectionString="Data Source=DESKTOP-VUOOK8G\SQLEXPRESS;Initial Catalog=HomeArkDev;Integrated Security=True" Provider="System.Data.SqlClient" databasetype="MicrosoftSqlServer" />
+    <Table Name="Contacts" Member="Contacts">
+      <Type Name="Contacts">
+        <Column Name="ContactID" Type=" Integer" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar=" Integer" LinqVarCSharp="int" VarCSharp="int" IsRequared="true" IsPrimary_Key="true" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="ContactName" Type="String" Size="100" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="ContactEmail" Type="String" Size="-1" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="Message" Type="String" Size="-1" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+      </Type>
+    </Table>
+    <Table Name="Furniture" Member="Furniture">
+      <Type Name="Furniture">
+        <Column Name="furnitureID" Type=" Integer" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar=" Integer" LinqVarCSharp="int" VarCSharp="int" IsRequared="true" IsPrimary_Key="true" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="FurnitureDescription" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+      </Type>
+    </Table>
+    <Table Name="LeaseType" Member="LeaseType">
+      <Type Name="LeaseType">
+        <Column Name="LeaseID" Type=" Integer" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar=" Integer" LinqVarCSharp="int" VarCSharp="int" IsRequared="true" IsPrimary_Key="true" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="LeaseDetails" Type="String" Size="100" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+      </Type>
+    </Table>
+    <Table Name="LettingManager" Member="LettingManager">
+      <Type Name="LettingManager">
+        <Column Name="PropertyID" Type=" Integer" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar=" Integer" LinqVarCSharp="int" VarCSharp="int" IsRequared="true" IsPrimary_Key="true" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="Address" Type="String" Size="255" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="StateDescriptionId" Type="System.Nullable(Of Integer)" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar="System.Nullable(Of Integer)" LinqVarCSharp="System.Nullable&lt;int&gt;" VarCSharp="int" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="true" IsAutoincrement="false" ForeignKeyColumnName="StateDescriptionId" RelatedTable="StateDescription" ForeignKeyName="PK_StateDescription" ForeignRelatedColumnName="StateDescriptionId" />
+        <Column Name="Description" Type="String" Size="16" TypeSQL="ntext" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="Rent" Type="System.Nullable(Of Decimal)" Size="8" TypeSQL="money" TypeVB="Decimal" LinqVar="System.Nullable(Of Decimal)" LinqVarCSharp="decimal?" VarCSharp="decimal" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="PeriodID" Type="System.Nullable(Of Integer)" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar="System.Nullable(Of Integer)" LinqVarCSharp="System.Nullable&lt;int&gt;" VarCSharp="int" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="true" IsAutoincrement="false" ForeignKeyColumnName="PeriodID" RelatedTable="Period" ForeignKeyName="PK_Period" ForeignRelatedColumnName="PeriodID" />
+        <Column Name="FurnitureID" Type="System.Nullable(Of Integer)" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar="System.Nullable(Of Integer)" LinqVarCSharp="System.Nullable&lt;int&gt;" VarCSharp="int" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="true" IsAutoincrement="false" ForeignKeyColumnName="FurnitureID" RelatedTable="Furniture" ForeignKeyName="PK_Furniture" ForeignRelatedColumnName="furnitureID" />
+        <Column Name="PictureName" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="road" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="StyleOfPropertyID" Type="System.Nullable(Of Integer)" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar="System.Nullable(Of Integer)" LinqVarCSharp="System.Nullable&lt;int&gt;" VarCSharp="int" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="true" IsAutoincrement="false" ForeignKeyColumnName="StyleOfPropertyID" RelatedTable="StyleOfProperty" ForeignKeyName="PK_StyleOfProperty" ForeignRelatedColumnName="StyleOfPropertyID" />
+        <Column Name="LettingStatusID" Type="System.Nullable(Of Integer)" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar="System.Nullable(Of Integer)" LinqVarCSharp="System.Nullable&lt;int&gt;" VarCSharp="int" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="true" IsAutoincrement="false" ForeignKeyColumnName="LettingStatusID" RelatedTable="LettingStatus" ForeignKeyName="PK_LettingStatus" ForeignRelatedColumnName="LettingStatusID" />
+        <Column Name="UserId" Type="String" Size="128" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+      </Type>
+    </Table>
+    <Table Name="LettingPicture" Member="LettingPicture">
+      <Type Name="LettingPicture">
+        <Column Name="PictureListID" Type=" Integer" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar=" Integer" LinqVarCSharp="int" VarCSharp="int" IsRequared="true" IsPrimary_Key="true" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="PropertyID" Type=" Integer" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar=" Integer" LinqVarCSharp="int" VarCSharp="int" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="true" IsAutoincrement="false" ForeignKeyColumnName="PropertyID" RelatedTable="LettingManager" ForeignKeyName="PK_LettingManager" ForeignRelatedColumnName="PropertyID" />
+        <Column Name="FileName" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="Description" Type="String" Size="16" TypeSQL="ntext" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="UserId" Type="String" Size="128" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+      </Type>
+    </Table>
+    <Table Name="LettingsMainImages" Member="LettingsMainImages">
+      <Type Name="LettingsMainImages">
+        <Column Name="MainImageID" Type=" Integer" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar=" Integer" LinqVarCSharp="int" VarCSharp="int" IsRequared="true" IsPrimary_Key="true" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="PropertyID" Type=" Integer" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar=" Integer" LinqVarCSharp="int" VarCSharp="int" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="ImageName" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+      </Type>
+    </Table>
+    <Table Name="LettingStatus" Member="LettingStatus">
+      <Type Name="LettingStatus">
+        <Column Name="LettingStatusID" Type=" Integer" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar=" Integer" LinqVarCSharp="int" VarCSharp="int" IsRequared="true" IsPrimary_Key="true" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="StatusDetails" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+      </Type>
+    </Table>
+    <Table Name="Period" Member="Period">
+      <Type Name="Period">
+        <Column Name="PeriodID" Type=" Integer" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar=" Integer" LinqVarCSharp="int" VarCSharp="int" IsRequared="true" IsPrimary_Key="true" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="PeriodDescription" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+      </Type>
+    </Table>
+    <Table Name="Profix" Member="Profix">
+      <Type Name="Profix">
+        <Column Name="PrefixID" Type=" Integer" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar=" Integer" LinqVarCSharp="int" VarCSharp="int" IsRequared="true" IsPrimary_Key="true" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="PrefixDetails" Type="String" Size="70" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+      </Type>
+    </Table>
+    <Table Name="SalesMainImages" Member="SalesMainImages">
+      <Type Name="SalesMainImages">
+        <Column Name="SalesMainImageID" Type=" Integer" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar=" Integer" LinqVarCSharp="int" VarCSharp="int" IsRequared="true" IsPrimary_Key="true" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="PropertyID" Type=" Integer" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar=" Integer" LinqVarCSharp="int" VarCSharp="int" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="ImageName" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="road" Type="System.Nullable(Of Integer)" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar="System.Nullable(Of Integer)" LinqVarCSharp="System.Nullable&lt;int&gt;" VarCSharp="int" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+      </Type>
+    </Table>
+    <Table Name="SalesManager" Member="SalesManager">
+      <Type Name="SalesManager">
+        <Column Name="SalesManagerId" Type=" Integer" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar=" Integer" LinqVarCSharp="int" VarCSharp="int" IsRequared="true" IsPrimary_Key="true" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="Address" Type="String" Size="255" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="Description" Type="String" Size="16" TypeSQL="ntext" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="Rent" Type="System.Nullable(Of Decimal)" Size="8" TypeSQL="money" TypeVB="Decimal" LinqVar="System.Nullable(Of Decimal)" LinqVarCSharp="decimal?" VarCSharp="decimal" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="PictureName" Type="String" Size="100" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="StateDescriptionId" Type="System.Nullable(Of Integer)" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar="System.Nullable(Of Integer)" LinqVarCSharp="System.Nullable&lt;int&gt;" VarCSharp="int" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="true" IsAutoincrement="false" ForeignKeyColumnName="StateDescriptionId" RelatedTable="StateDescription" ForeignKeyName="PK_StateDescription" ForeignRelatedColumnName="StateDescriptionId" />
+        <Column Name="PropertyStatusID" Type="System.Nullable(Of Integer)" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar="System.Nullable(Of Integer)" LinqVarCSharp="System.Nullable&lt;int&gt;" VarCSharp="int" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="LettingStatusID" Type="System.Nullable(Of Integer)" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar="System.Nullable(Of Integer)" LinqVarCSharp="System.Nullable&lt;int&gt;" VarCSharp="int" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="true" IsAutoincrement="false" ForeignKeyColumnName="LettingStatusID" RelatedTable="LettingStatus" ForeignKeyName="PK_LettingStatus" ForeignRelatedColumnName="LettingStatusID" />
+        <Column Name="PrefixID" Type="System.Nullable(Of Integer)" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar="System.Nullable(Of Integer)" LinqVarCSharp="System.Nullable&lt;int&gt;" VarCSharp="int" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="true" IsAutoincrement="false" ForeignKeyColumnName="PrefixID" RelatedTable="Profix" ForeignKeyName="PK_Profix" ForeignRelatedColumnName="PrefixID" />
+        <Column Name="road" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="StyleOfPropertyID" Type="System.Nullable(Of Integer)" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar="System.Nullable(Of Integer)" LinqVarCSharp="System.Nullable&lt;int&gt;" VarCSharp="int" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="true" IsAutoincrement="false" ForeignKeyColumnName="StyleOfPropertyID" RelatedTable="StyleOfProperty" ForeignKeyName="PK_StyleOfProperty" ForeignRelatedColumnName="StyleOfPropertyID" />
+        <Column Name="UserId" Type="String" Size="128" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+      </Type>
+    </Table>
+    <Table Name="SalesPicture" Member="SalesPicture">
+      <Type Name="SalesPicture">
+        <Column Name="SalesPrictureID" Type=" Integer" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar=" Integer" LinqVarCSharp="int" VarCSharp="int" IsRequared="true" IsPrimary_Key="true" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="PropertyID" Type=" Integer" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar=" Integer" LinqVarCSharp="int" VarCSharp="int" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="true" IsAutoincrement="false" ForeignKeyColumnName="PropertyID" RelatedTable="SalesManager" ForeignKeyName="PK_SalesManager" ForeignRelatedColumnName="SalesManagerId" />
+        <Column Name="FileName" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="Description" Type="String" Size="16" TypeSQL="ntext" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="UserId" Type="String" Size="128" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+      </Type>
+    </Table>
+    <Table Name="SlideContent" Member="SlideContent">
+      <Type Name="SlideContent">
+        <Column Name="SlideID" Type=" Integer" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar=" Integer" LinqVarCSharp="int" VarCSharp="int" IsRequared="true" IsPrimary_Key="true" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="SlideTitle" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="SlideContent" Type="String" Size="-1" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="SlideImage" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="HLink" Type="String" Size="-1" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+      </Type>
+    </Table>
+    <Table Name="SlideDisplay" Member="SlideDisplay">
+      <Type Name="SlideDisplay">
+        <Column Name="SlideDisplayID" Type=" Integer" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar=" Integer" LinqVarCSharp="int" VarCSharp="int" IsRequared="true" IsPrimary_Key="true" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="propertylink" Type="String" Size="-1" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="DisplayHeader" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="DisplayDetails" Type="String" Size="-1" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="PictureName" Type="String" Size="250" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+      </Type>
+    </Table>
+    <Table Name="StateDescription" Member="StateDescription">
+      <Type Name="StateDescription">
+        <Column Name="StateDescriptionId" Type=" Integer" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar=" Integer" LinqVarCSharp="int" VarCSharp="int" IsRequared="true" IsPrimary_Key="true" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="DescriptionSize" Type="String" Size="100" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+      </Type>
+    </Table>
+    <Table Name="StyleOfProperty" Member="StyleOfProperty">
+      <Type Name="StyleOfProperty">
+        <Column Name="StyleOfPropertyID" Type=" Integer" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar=" Integer" LinqVarCSharp="int" VarCSharp="int" IsRequared="true" IsPrimary_Key="true" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="StyleDescription" Type="String" Size="100" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+      </Type>
+    </Table>
+    <Table Name="UserRegister" Member="UserRegister">
+      <Type Name="UserRegister">
+        <Column Name="RegisterID" Type=" Integer" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar=" Integer" LinqVarCSharp="int" VarCSharp="int" IsRequared="true" IsPrimary_Key="true" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="Name" Type="String" Size="100" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="MobileNo" Type="String" Size="100" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="RentMin" Type="Decimal" Size="8" TypeSQL="money" TypeVB="Decimal" LinqVar="Decimal" LinqVarCSharp="decimal" VarCSharp="decimal" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="RentMax" Type="Decimal" Size="8" TypeSQL="money" TypeVB="Decimal" LinqVar="Decimal" LinqVarCSharp="decimal" VarCSharp="decimal" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="EmailAddress" Type="String" Size="-1" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="Message" Type="String" Size="-1" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="DoubleRoom" Type="Boolean" Size="1" TypeSQL="bit" TypeVB="Boolean" LinqVar="Boolean" LinqVarCSharp="bool" VarCSharp="bool" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="SingleRoom" Type="Boolean" Size="1" TypeSQL="bit" TypeVB="Boolean" LinqVar="Boolean" LinqVarCSharp="bool" VarCSharp="bool" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="OneBedroomFlat" Type="Boolean" Size="1" TypeSQL="bit" TypeVB="Boolean" LinqVar="Boolean" LinqVarCSharp="bool" VarCSharp="bool" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="TwoBedroomFlat" Type="Boolean" Size="1" TypeSQL="bit" TypeVB="Boolean" LinqVar="Boolean" LinqVarCSharp="bool" VarCSharp="bool" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="TwoBedHouse" Type="Boolean" Size="1" TypeSQL="bit" TypeVB="Boolean" LinqVar="Boolean" LinqVarCSharp="bool" VarCSharp="bool" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="ThreeBedFlat" Type="Boolean" Size="1" TypeSQL="bit" TypeVB="Boolean" LinqVar="Boolean" LinqVarCSharp="bool" VarCSharp="bool" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="ThreeBedHouse" Type="Boolean" Size="1" TypeSQL="bit" TypeVB="Boolean" LinqVar="Boolean" LinqVarCSharp="bool" VarCSharp="bool" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="FourBedHouse" Type="Boolean" Size="1" TypeSQL="bit" TypeVB="Boolean" LinqVar="Boolean" LinqVarCSharp="bool" VarCSharp="bool" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="FiveBedHouse" Type="Boolean" Size="1" TypeSQL="bit" TypeVB="Boolean" LinqVar="Boolean" LinqVarCSharp="bool" VarCSharp="bool" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="Shop" Type="Boolean" Size="1" TypeSQL="bit" TypeVB="Boolean" LinqVar="Boolean" LinqVarCSharp="bool" VarCSharp="bool" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+      </Type>
+    </Table>
+    <Table Name="__MigrationHistory" Member="__MigrationHistory">
+      <Type Name="__MigrationHistory">
+        <Column Name="MigrationId" Type="String" Size="150" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="true" IsPrimary_Key="true" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="ContextKey" Type="String" Size="300" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="true" IsPrimary_Key="true" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="Model" Type="String" Size="-1" TypeSQL="varbinary" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="ProductVersion" Type="String" Size="32" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+      </Type>
+    </Table>
+    <Table Name="AspNetRoles" Member="AspNetRoles">
+      <Type Name="AspNetRoles">
+        <Column Name="Id" Type="String" Size="128" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="true" IsPrimary_Key="true" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="Name" Type="String" Size="256" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+      </Type>
+    </Table>
+    <Table Name="AspNetUserClaims" Member="AspNetUserClaims">
+      <Type Name="AspNetUserClaims">
+        <Column Name="Id" Type=" Integer" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar=" Integer" LinqVarCSharp="int" VarCSharp="int" IsRequared="true" IsPrimary_Key="true" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="UserId" Type="String" Size="128" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="true" IsAutoincrement="false" ForeignKeyColumnName="UserId" RelatedTable="AspNetUsers" ForeignKeyName="PK_dbo.AspNetUsers" ForeignRelatedColumnName="Id" />
+        <Column Name="ClaimType" Type="String" Size="-1" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="ClaimValue" Type="String" Size="-1" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+      </Type>
+    </Table>
+    <Table Name="AspNetUserLogins" Member="AspNetUserLogins">
+      <Type Name="AspNetUserLogins">
+        <Column Name="LoginProvider" Type="String" Size="128" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="true" IsPrimary_Key="true" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="ProviderKey" Type="String" Size="128" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="true" IsPrimary_Key="true" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="UserId" Type="String" Size="128" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="true" IsPrimary_Key="true" IsForeign_Key="true" IsAutoincrement="false" ForeignKeyColumnName="UserId" RelatedTable="AspNetUsers" ForeignKeyName="PK_dbo.AspNetUsers" ForeignRelatedColumnName="Id" />
+      </Type>
+    </Table>
+    <Table Name="AspNetUserRoles" Member="AspNetUserRoles">
+      <Type Name="AspNetUserRoles">
+        <Column Name="UserId" Type="String" Size="128" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="true" IsPrimary_Key="true" IsForeign_Key="true" IsAutoincrement="false" ForeignKeyColumnName="UserId" RelatedTable="AspNetUsers" ForeignKeyName="PK_dbo.AspNetUsers" ForeignRelatedColumnName="Id" />
+        <Column Name="RoleId" Type="String" Size="128" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="true" IsPrimary_Key="true" IsForeign_Key="true" IsAutoincrement="false" ForeignKeyColumnName="RoleId" RelatedTable="AspNetRoles" ForeignKeyName="PK_dbo.AspNetRoles" ForeignRelatedColumnName="Id" />
+      </Type>
+    </Table>
+    <Table Name="AspNetUsers" Member="AspNetUsers">
+      <Type Name="AspNetUsers">
+        <Column Name="Id" Type="String" Size="128" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="true" IsPrimary_Key="true" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="Email" Type="String" Size="256" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="EmailConfirmed" Type="Boolean" Size="1" TypeSQL="bit" TypeVB="Boolean" LinqVar="Boolean" LinqVarCSharp="bool" VarCSharp="bool" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="PasswordHash" Type="String" Size="-1" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="SecurityStamp" Type="String" Size="-1" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="PhoneNumber" Type="String" Size="-1" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="PhoneNumberConfirmed" Type="Boolean" Size="1" TypeSQL="bit" TypeVB="Boolean" LinqVar="Boolean" LinqVarCSharp="bool" VarCSharp="bool" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="TwoFactorEnabled" Type="Boolean" Size="1" TypeSQL="bit" TypeVB="Boolean" LinqVar="Boolean" LinqVarCSharp="bool" VarCSharp="bool" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="LockoutEndDateUtc" Type="System.Nullable(Of Date)" Size="8" TypeSQL="datetime" TypeVB="Date" LinqVar="System.Nullable(Of Date)" LinqVarCSharp="DateTime?" VarCSharp="DateTime" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="LockoutEnabled" Type="Boolean" Size="1" TypeSQL="bit" TypeVB="Boolean" LinqVar="Boolean" LinqVarCSharp="bool" VarCSharp="bool" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="AccessFailedCount" Type=" Integer" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar=" Integer" LinqVarCSharp="int" VarCSharp="int" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="UserName" Type="String" Size="256" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+      </Type>
+    </Table>
+    <View Name="ViewLettings" Member="ViewLettings">
+      <Type Name="ViewLettings">
+        <Column Name="PropertyID" Type=" Integer" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar=" Integer" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" />
+        <Column Name="Address" Type="String" Size="255" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" />
+        <Column Name="Description" Type="String" Size="16" TypeSQL="ntext" TypeVB="String" LinqVar="String" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" />
+        <Column Name="Rent" Type="System.Nullable(Of Decimal)" Size="8" TypeSQL="money" TypeVB="Decimal" LinqVar="System.Nullable(Of Decimal)" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" />
+        <Column Name="PictureName" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" />
+        <Column Name="road" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" />
+        <Column Name="FurnitureDescription" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" />
+        <Column Name="StyleDescription" Type="String" Size="100" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" />
+        <Column Name="StatusDetails" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" />
+        <Column Name="PeriodDescription" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" />
+        <Column Name="DescriptionSize" Type="String" Size="100" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" />
+      </Type>
+      <ViewHeader>&lt;![CDATA[CREATE VIEW dbo.ViewLettings
+AS
+]]&gt;</ViewHeader>
+      <ViewDetails>&lt;![CDATA[SELECT        Agency.LettingManager.PropertyID, Agency.LettingManager.Address, Agency.LettingManager.Description, Agency.LettingManager.Rent, Agency.LettingManager.PictureName, Agency.LettingManager.road, 
+                         Agency.Furniture.FurnitureDescription, Agency.StyleOfProperty.StyleDescription, Agency.LettingStatus.StatusDetails, Agency.Period.PeriodDescription, Agency.StateDescription.DescriptionSize
+FROM            Agency.LettingManager INNER JOIN
+                         Agency.Furniture ON Agency.LettingManager.FurnitureID = Agency.Furniture.furnitureID INNER JOIN
+                         Agency.LettingStatus ON Agency.LettingManager.LettingStatusID = Agency.LettingStatus.LettingStatusID INNER JOIN
+                         Agency.Period ON Agency.LettingManager.PeriodID = Agency.Period.PeriodID INNER JOIN
+                         Agency.StateDescription ON Agency.LettingManager.StateDescriptionId = Agency.StateDescription.StateDescriptionId INNER JOIN
+                         Agency.StyleOfProperty ON Agency.LettingManager.StyleOfPropertyID = Agency.StyleOfProperty.StyleOfPropertyID
+]]&gt;</ViewDetails>
+    </View>
+  </Database>
+</VBSpiderManager>

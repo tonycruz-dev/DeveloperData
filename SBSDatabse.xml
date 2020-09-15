@@ -1,0 +1,323 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VBSpiderManager>
+  <Database Name="BSBDatabase">
+    <Connection ConnectionString="Data Source=DESKTOP-VUOOK8G\sqlexpress;Initial Catalog=BSBDatabase;Integrated Security=True" Provider="System.Data.SqlClient" databasetype="MicrosoftSqlServer" />
+    <Table Name="Address" Member="Address">
+      <Type Name="Address">
+        <Column Name="AddressACN" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="true" IsPrimary_Key="true" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="ContactName" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="Address" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="City" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="Regon" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="PostCode" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="Country" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="Phone" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="Fax" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="MobilPhone" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+      </Type>
+    </Table>
+    <Table Name="AmountPaiment" Member="AmountPaiment">
+      <Type Name="AmountPaiment">
+        <Column Name="PaimentID" Type=" Integer" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar=" Integer" LinqVarCSharp="int" VarCSharp="int" IsRequared="true" IsPrimary_Key="true" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="CustomerAc" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="true" IsAutoincrement="false" ForeignKeyColumnName="CustomerAc" RelatedTable="Customers" ForeignKeyName="PK_Customers" ForeignRelatedColumnName="CustomerAc" />
+        <Column Name="CustomerName" Type="String" Size="250" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="Total" Type="System.Nullable(Of Decimal)" Size="8" TypeSQL="money" TypeVB="Decimal" LinqVar="System.Nullable(Of Decimal)" LinqVarCSharp="decimal?" VarCSharp="decimal" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="TotalPaid" Type="System.Nullable(Of Decimal)" Size="8" TypeSQL="money" TypeVB="Decimal" LinqVar="System.Nullable(Of Decimal)" LinqVarCSharp="decimal?" VarCSharp="decimal" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="Overdue" Type="System.Nullable(Of Decimal)" Size="8" TypeSQL="money" TypeVB="Decimal" LinqVar="System.Nullable(Of Decimal)" LinqVarCSharp="decimal?" VarCSharp="decimal" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="Description" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="DataPayment" Type="System.Nullable(Of Date)" Size="8" TypeSQL="datetime" TypeVB="Date" LinqVar="System.Nullable(Of Date)" LinqVarCSharp="DateTime?" VarCSharp="DateTime" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+      </Type>
+    </Table>
+    <Table Name="BacUp" Member="BacUp">
+      <Type Name="BacUp">
+        <Column Name="InvoiceID" Type=" Integer" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar=" Integer" LinqVarCSharp="int" VarCSharp="int" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="CustomerAc" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="CompanyName" Type="String" Size="250" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="DataPaiment" Type="System.Nullable(Of Date)" Size="8" TypeSQL="datetime" TypeVB="Date" LinqVar="System.Nullable(Of Date)" LinqVarCSharp="DateTime?" VarCSharp="DateTime" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="TotalOfGoods" Type="System.Nullable(Of Decimal)" Size="8" TypeSQL="money" TypeVB="Decimal" LinqVar="System.Nullable(Of Decimal)" LinqVarCSharp="decimal?" VarCSharp="decimal" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="PaymentOverdue" Type="System.Nullable(Of Decimal)" Size="8" TypeSQL="money" TypeVB="Decimal" LinqVar="System.Nullable(Of Decimal)" LinqVarCSharp="decimal?" VarCSharp="decimal" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="AmountPaid" Type="System.Nullable(Of Decimal)" Size="8" TypeSQL="money" TypeVB="Decimal" LinqVar="System.Nullable(Of Decimal)" LinqVarCSharp="decimal?" VarCSharp="decimal" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="TypePayment" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="PaimentID" Type="System.Nullable(Of Integer)" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar="System.Nullable(Of Integer)" LinqVarCSharp="System.Nullable&lt;int&gt;" VarCSharp="int" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+      </Type>
+    </Table>
+    <Table Name="CashEstimat" Member="CashEstimat">
+      <Type Name="CashEstimat">
+        <Column Name="EstimateID" Type=" Integer" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar=" Integer" LinqVarCSharp="int" VarCSharp="int" IsRequared="true" IsPrimary_Key="true" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="EstimateDate" Type="System.Nullable(Of Date)" Size="8" TypeSQL="datetime" TypeVB="Date" LinqVar="System.Nullable(Of Date)" LinqVarCSharp="DateTime?" VarCSharp="DateTime" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="AddressBill" Type="String" Size="255" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="CustomerAc" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="EstimateIDSearch" Type="String" Size="20" TypeSQL="varchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+      </Type>
+    </Table>
+    <Table Name="CashEstmateDetails" Member="CashEstmateDetails">
+      <Type Name="CashEstmateDetails">
+        <Column Name="CashEstimatID" Type=" Integer" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar=" Integer" LinqVarCSharp="int" VarCSharp="int" IsRequared="true" IsPrimary_Key="true" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="EstimateID" Type=" Integer" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar=" Integer" LinqVarCSharp="int" VarCSharp="int" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="true" IsAutoincrement="false" ForeignKeyColumnName="EstimateID" RelatedTable="CashEstimat" ForeignKeyName="PK_CashEstimat" ForeignRelatedColumnName="EstimateID" />
+        <Column Name="Description" Type="String" Size="-1" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="Total" Type="System.Nullable(Of Decimal)" Size="8" TypeSQL="money" TypeVB="Decimal" LinqVar="System.Nullable(Of Decimal)" LinqVarCSharp="decimal?" VarCSharp="decimal" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+      </Type>
+    </Table>
+    <Table Name="CashInvoice" Member="CashInvoice">
+      <Type Name="CashInvoice">
+        <Column Name="InvoiceID" Type=" Integer" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar=" Integer" LinqVarCSharp="int" VarCSharp="int" IsRequared="true" IsPrimary_Key="true" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="InvoiceDate" Type="System.Nullable(Of Date)" Size="8" TypeSQL="datetime" TypeVB="Date" LinqVar="System.Nullable(Of Date)" LinqVarCSharp="DateTime?" VarCSharp="DateTime" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="AddressBill" Type="String" Size="255" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="JobAddress" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="CustomerAc" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="TotalPaid" Type="System.Nullable(Of Decimal)" Size="8" TypeSQL="money" TypeVB="Decimal" LinqVar="System.Nullable(Of Decimal)" LinqVarCSharp="decimal?" VarCSharp="decimal" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="EndPayment" Type="String" Size="10" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="InvoiceIDSearch" Type="String" Size="20" TypeSQL="varchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+      </Type>
+    </Table>
+    <Table Name="CashInvoiceDetailes" Member="CashInvoiceDetailes">
+      <Type Name="CashInvoiceDetailes">
+        <Column Name="CashInvoiceDetaileID" Type=" Integer" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar=" Integer" LinqVarCSharp="int" VarCSharp="int" IsRequared="true" IsPrimary_Key="true" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="InvoiceID" Type="System.Nullable(Of Integer)" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar="System.Nullable(Of Integer)" LinqVarCSharp="System.Nullable&lt;int&gt;" VarCSharp="int" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="true" IsAutoincrement="false" ForeignKeyColumnName="InvoiceID" RelatedTable="CashInvoice" ForeignKeyName="PK_CashInvoice" ForeignRelatedColumnName="InvoiceID" />
+        <Column Name="Description" Type="String" Size="-1" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="Total" Type="System.Nullable(Of Decimal)" Size="8" TypeSQL="money" TypeVB="Decimal" LinqVar="System.Nullable(Of Decimal)" LinqVarCSharp="decimal?" VarCSharp="decimal" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+      </Type>
+    </Table>
+    <Table Name="CustCashPaiment" Member="CustCashPaiment">
+      <Type Name="CustCashPaiment">
+        <Column Name="InvoiceID" Type="System.Nullable(Of Integer)" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar="System.Nullable(Of Integer)" LinqVarCSharp="System.Nullable&lt;int&gt;" VarCSharp="int" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="InvoiceNum" Type=" Integer" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar=" Integer" LinqVarCSharp="int" VarCSharp="int" IsRequared="true" IsPrimary_Key="true" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="CustomerAc" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="CompanyName" Type="String" Size="255" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="DataPaiment" Type="System.Nullable(Of Date)" Size="8" TypeSQL="datetime" TypeVB="Date" LinqVar="System.Nullable(Of Date)" LinqVarCSharp="DateTime?" VarCSharp="DateTime" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="TotalOfGoods" Type="System.Nullable(Of Decimal)" Size="8" TypeSQL="money" TypeVB="Decimal" LinqVar="System.Nullable(Of Decimal)" LinqVarCSharp="decimal?" VarCSharp="decimal" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="PaymentOverdue" Type="System.Nullable(Of Decimal)" Size="8" TypeSQL="money" TypeVB="Decimal" LinqVar="System.Nullable(Of Decimal)" LinqVarCSharp="decimal?" VarCSharp="decimal" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="AmountPaid" Type="System.Nullable(Of Decimal)" Size="8" TypeSQL="money" TypeVB="Decimal" LinqVar="System.Nullable(Of Decimal)" LinqVarCSharp="decimal?" VarCSharp="decimal" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="TypePayment" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="PaimentID" Type="System.Nullable(Of Integer)" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar="System.Nullable(Of Integer)" LinqVarCSharp="System.Nullable&lt;int&gt;" VarCSharp="int" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+      </Type>
+    </Table>
+    <Table Name="Customers" Member="Customers">
+      <Type Name="Customers">
+        <Column Name="CustomerAc" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="true" IsPrimary_Key="true" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="CompanyName" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="ContactName" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="Address" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="City" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="Region" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="PostCode" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="Country" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="Phone" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="Fax" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="EMail" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="WebPage" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="Note" Type="String" Size="-1" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+      </Type>
+    </Table>
+    <Table Name="CustPaiment" Member="CustPaiment">
+      <Type Name="CustPaiment">
+        <Column Name="CustPaimentID" Type=" Integer" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar=" Integer" LinqVarCSharp="int" VarCSharp="int" IsRequared="true" IsPrimary_Key="true" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="InvoiceID" Type="System.Nullable(Of Integer)" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar="System.Nullable(Of Integer)" LinqVarCSharp="System.Nullable&lt;int&gt;" VarCSharp="int" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="CustomerAc" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="true" IsAutoincrement="false" ForeignKeyColumnName="CustomerAc" RelatedTable="Customers" ForeignKeyName="PK_Customers" ForeignRelatedColumnName="CustomerAc" />
+        <Column Name="CompanyName" Type="String" Size="250" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="DataPaiment" Type="System.Nullable(Of Date)" Size="8" TypeSQL="datetime" TypeVB="Date" LinqVar="System.Nullable(Of Date)" LinqVarCSharp="DateTime?" VarCSharp="DateTime" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="TotalOfGoods" Type="System.Nullable(Of Decimal)" Size="8" TypeSQL="money" TypeVB="Decimal" LinqVar="System.Nullable(Of Decimal)" LinqVarCSharp="decimal?" VarCSharp="decimal" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="PaymentOverdue" Type="System.Nullable(Of Decimal)" Size="8" TypeSQL="money" TypeVB="Decimal" LinqVar="System.Nullable(Of Decimal)" LinqVarCSharp="decimal?" VarCSharp="decimal" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="AmountPaid" Type="System.Nullable(Of Decimal)" Size="8" TypeSQL="money" TypeVB="Decimal" LinqVar="System.Nullable(Of Decimal)" LinqVarCSharp="decimal?" VarCSharp="decimal" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="TypePayment" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="PaimentID" Type="System.Nullable(Of Integer)" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar="System.Nullable(Of Integer)" LinqVarCSharp="System.Nullable&lt;int&gt;" VarCSharp="int" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+      </Type>
+    </Table>
+    <Table Name="EstimatDetails" Member="EstimatDetails">
+      <Type Name="EstimatDetails">
+        <Column Name="EstimatDetailsID" Type=" Integer" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar=" Integer" LinqVarCSharp="int" VarCSharp="int" IsRequared="true" IsPrimary_Key="true" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="EstimateID" Type="System.Nullable(Of Integer)" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar="System.Nullable(Of Integer)" LinqVarCSharp="System.Nullable&lt;int&gt;" VarCSharp="int" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="true" IsAutoincrement="false" ForeignKeyColumnName="EstimateID" RelatedTable="Estimate" ForeignKeyName="PK_Estimate" ForeignRelatedColumnName="EstimateID" />
+        <Column Name="Description" Type="String" Size="-1" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="Total" Type="System.Nullable(Of Decimal)" Size="8" TypeSQL="money" TypeVB="Decimal" LinqVar="System.Nullable(Of Decimal)" LinqVarCSharp="decimal?" VarCSharp="decimal" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+      </Type>
+    </Table>
+    <Table Name="Estimate" Member="Estimate">
+      <Type Name="Estimate">
+        <Column Name="EstimateID" Type=" Integer" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar=" Integer" LinqVarCSharp="int" VarCSharp="int" IsRequared="true" IsPrimary_Key="true" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="EstimateDate" Type="System.Nullable(Of Date)" Size="8" TypeSQL="datetime" TypeVB="Date" LinqVar="System.Nullable(Of Date)" LinqVarCSharp="DateTime?" VarCSharp="DateTime" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="AddressBill" Type="String" Size="255" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="AddressJob" Type="String" Size="255" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="CustomerAc" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="EstimateIDSearch" Type="String" Size="20" TypeSQL="varchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+      </Type>
+    </Table>
+    <Table Name="InviceDetailsfrom2330" Member="InviceDetailsfrom2330">
+      <Type Name="InviceDetailsfrom2330">
+        <Column Name="InvoiceID" Type=" Integer" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar=" Integer" LinqVarCSharp="int" VarCSharp="int" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="Description" Type="String" Size="255" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="TotalInvAmt" Type="System.Nullable(Of Decimal)" Size="8" TypeSQL="money" TypeVB="Decimal" LinqVar="System.Nullable(Of Decimal)" LinqVarCSharp="decimal?" VarCSharp="decimal" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+      </Type>
+    </Table>
+    <Table Name="Invoice" Member="Invoice">
+      <Type Name="Invoice">
+        <Column Name="InvoiceID" Type=" Integer" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar=" Integer" LinqVarCSharp="int" VarCSharp="int" IsRequared="true" IsPrimary_Key="true" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="JobNumber" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="InvoiceDate" Type="System.Nullable(Of Date)" Size="8" TypeSQL="datetime" TypeVB="Date" LinqVar="System.Nullable(Of Date)" LinqVarCSharp="DateTime?" VarCSharp="DateTime" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="AddressBill" Type="String" Size="-1" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="AddressJob" Type="String" Size="-1" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="JobAddress0" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="CustomerAc" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="TotalPaid" Type="System.Nullable(Of Decimal)" Size="8" TypeSQL="money" TypeVB="Decimal" LinqVar="System.Nullable(Of Decimal)" LinqVarCSharp="decimal?" VarCSharp="decimal" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="EndPayment" Type="String" Size="10" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="InvoiceIDSearch" Type="String" Size="20" TypeSQL="varchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+      </Type>
+    </Table>
+    <Table Name="InvoiceDetails" Member="InvoiceDetails">
+      <Type Name="InvoiceDetails">
+        <Column Name="InvoiceDetailID" Type=" Integer" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar=" Integer" LinqVarCSharp="int" VarCSharp="int" IsRequared="true" IsPrimary_Key="true" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="InvoiceID" Type="System.Nullable(Of Integer)" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar="System.Nullable(Of Integer)" LinqVarCSharp="System.Nullable&lt;int&gt;" VarCSharp="int" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="true" IsAutoincrement="false" ForeignKeyColumnName="InvoiceID" RelatedTable="Invoice" ForeignKeyName="PK_Invoice" ForeignRelatedColumnName="InvoiceID" />
+        <Column Name="Description" Type="String" Size="-1" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="Total" Type="System.Nullable(Of Decimal)" Size="8" TypeSQL="money" TypeVB="Decimal" LinqVar="System.Nullable(Of Decimal)" LinqVarCSharp="decimal?" VarCSharp="decimal" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+      </Type>
+    </Table>
+    <Table Name="InvoiceFrom2330" Member="InvoiceFrom2330">
+      <Type Name="InvoiceFrom2330">
+        <Column Name="InvoiceID" Type="System.Nullable(Of Short)" Size="2" TypeSQL="smallint" TypeVB="Int16" LinqVar="System.Nullable(Of Short)" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="JobNumber" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="InvoiceDate" Type="System.Nullable(Of Date)" Size="8" TypeSQL="datetime" TypeVB="Date" LinqVar="System.Nullable(Of Date)" LinqVarCSharp="DateTime?" VarCSharp="DateTime" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="AddressBill" Type="String" Size="-1" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="AddressJob" Type="String" Size="-1" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="CustomerAc" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="TotalPaid" Type="System.Nullable(Of Decimal)" Size="8" TypeSQL="money" TypeVB="Decimal" LinqVar="System.Nullable(Of Decimal)" LinqVarCSharp="decimal?" VarCSharp="decimal" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+        <Column Name="EndPayment" Type="String" Size="10" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" LinqVarCSharp="string" VarCSharp="string" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" ForeignKeyColumnName="" RelatedTable="" ForeignKeyName="" ForeignRelatedColumnName="" />
+      </Type>
+    </Table>
+    <View Name="CustomerSubTotal" Member="CustomerSubTotal">
+      <Type Name="CustomerSubTotal">
+        <Column Name="InvoiceDate" Type="System.Nullable(Of Date)" Size="8" TypeSQL="datetime" TypeVB="Date" LinqVar="System.Nullable(Of Date)" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" />
+        <Column Name="InvoiceID" Type=" Integer" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar=" Integer" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" />
+        <Column Name="CustomerAc" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" />
+        <Column Name="AddressBill" Type="String" Size="-1" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" />
+        <Column Name="TotalPaid" Type="System.Nullable(Of Decimal)" Size="8" TypeSQL="money" TypeVB="Decimal" LinqVar="System.Nullable(Of Decimal)" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" />
+        <Column Name="EndPayment" Type="String" Size="10" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" />
+        <Column Name="SumOfTotal" Type="System.Nullable(Of Decimal)" Size="8" TypeSQL="money" TypeVB="Decimal" LinqVar="System.Nullable(Of Decimal)" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" />
+        <Column Name="Overdue" Type="System.Nullable(Of Decimal)" Size="8" TypeSQL="money" TypeVB="Decimal" LinqVar="System.Nullable(Of Decimal)" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" />
+      </Type>
+      <ViewHeader>&lt;![CDATA[CREATE VIEW [dbo].[CustomerSubTotal]
+AS
+]]&gt;</ViewHeader>
+      <ViewDetails>&lt;![CDATA[SELECT     dbo.Invoice.InvoiceDate, dbo.Invoice.InvoiceID, dbo.Invoice.CustomerAc, dbo.Invoice.AddressBill, dbo.Invoice.TotalPaid, dbo.Invoice.EndPayment, 
+                      dbo.SumInvoiceDetails.SumOfTotal, dbo.SumInvoiceDetails.SumOfTotal - dbo.Invoice.TotalPaid AS Overdue
+FROM         dbo.Invoice INNER JOIN
+                      dbo.SumInvoiceDetails ON dbo.Invoice.InvoiceID = dbo.SumInvoiceDetails.InvoiceID
+]]&gt;</ViewDetails>
+    </View>
+    <View Name="History" Member="History">
+      <Type Name="History">
+        <Column Name="InvoiceID" Type=" Integer" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar=" Integer" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" />
+        <Column Name="CustomerAc" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" />
+        <Column Name="AddressBill" Type="String" Size="-1" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" />
+        <Column Name="SumOfTotal" Type="System.Nullable(Of Decimal)" Size="8" TypeSQL="money" TypeVB="Decimal" LinqVar="System.Nullable(Of Decimal)" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" />
+        <Column Name="EndPayment" Type="String" Size="10" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" />
+        <Column Name="TotalPaid" Type="System.Nullable(Of Decimal)" Size="8" TypeSQL="money" TypeVB="Decimal" LinqVar="System.Nullable(Of Decimal)" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" />
+        <Column Name="Overdue" Type="System.Nullable(Of Decimal)" Size="8" TypeSQL="money" TypeVB="Decimal" LinqVar="System.Nullable(Of Decimal)" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" />
+      </Type>
+      <ViewHeader>&lt;![CDATA[CREATE VIEW [dbo].[History]
+AS
+]]&gt;</ViewHeader>
+      <ViewDetails>&lt;![CDATA[SELECT     dbo.Invoice.InvoiceID, dbo.Invoice.CustomerAc, dbo.Invoice.AddressBill, dbo.SumInvoiceDetails.SumOfTotal, dbo.Invoice.EndPayment, 
+                      dbo.Invoice.TotalPaid, dbo.SumInvoiceDetails.SumOfTotal - dbo.Invoice.TotalPaid AS Overdue
+FROM         dbo.Invoice INNER JOIN
+                      dbo.SumInvoiceDetails ON dbo.Invoice.InvoiceID = dbo.SumInvoiceDetails.InvoiceID
+
+
+]]&gt;</ViewDetails>
+    </View>
+    <View Name="MainSumTotalCash" Member="MainSumTotalCash">
+      <Type Name="MainSumTotalCash">
+        <Column Name="InvoiceDate" Type="System.Nullable(Of Date)" Size="8" TypeSQL="datetime" TypeVB="Date" LinqVar="System.Nullable(Of Date)" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" />
+        <Column Name="InvoiceID" Type=" Integer" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar=" Integer" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" />
+        <Column Name="AddressBill" Type="String" Size="255" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" />
+        <Column Name="TotalPaid" Type="System.Nullable(Of Decimal)" Size="8" TypeSQL="money" TypeVB="Decimal" LinqVar="System.Nullable(Of Decimal)" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" />
+        <Column Name="SumTotal" Type="System.Nullable(Of Decimal)" Size="8" TypeSQL="money" TypeVB="Decimal" LinqVar="System.Nullable(Of Decimal)" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" />
+        <Column Name="Overdue" Type="System.Nullable(Of Decimal)" Size="8" TypeSQL="money" TypeVB="Decimal" LinqVar="System.Nullable(Of Decimal)" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" />
+      </Type>
+      <ViewHeader>&lt;![CDATA[CREATE VIEW [dbo].[MainSumTotalCash]
+AS
+]]&gt;</ViewHeader>
+      <ViewDetails>&lt;![CDATA[SELECT     dbo.CashInvoice.InvoiceDate, dbo.CashInvoice.InvoiceID, dbo.CashInvoice.AddressBill, dbo.CashInvoice.TotalPaid, dbo.SumCashTotal.SumTotal, 
+                      dbo.SumCashTotal.SumTotal - dbo.CashInvoice.TotalPaid AS Overdue
+FROM         dbo.CashInvoice INNER JOIN
+                      dbo.SumCashTotal ON dbo.CashInvoice.InvoiceID = dbo.SumCashTotal.InvoiceID
+]]&gt;</ViewDetails>
+    </View>
+    <View Name="SumCashTotal" Member="SumCashTotal">
+      <Type Name="SumCashTotal">
+        <Column Name="InvoiceID" Type="System.Nullable(Of Integer)" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar="System.Nullable(Of Integer)" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" />
+        <Column Name="SumTotal" Type="System.Nullable(Of Decimal)" Size="8" TypeSQL="money" TypeVB="Decimal" LinqVar="System.Nullable(Of Decimal)" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" />
+      </Type>
+      <ViewHeader>&lt;![CDATA[CREATE VIEW [dbo].[SumCashTotal]
+AS
+]]&gt;</ViewHeader>
+      <ViewDetails>&lt;![CDATA[SELECT     InvoiceID, SUM(Total) AS SumTotal
+FROM         dbo.CashInvoiceDetailes
+GROUP BY InvoiceID
+]]&gt;</ViewDetails>
+    </View>
+    <View Name="SumInvoiceDetails" Member="SumInvoiceDetails">
+      <Type Name="SumInvoiceDetails">
+        <Column Name="InvoiceID" Type="System.Nullable(Of Integer)" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar="System.Nullable(Of Integer)" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" />
+        <Column Name="SumOfTotal" Type="System.Nullable(Of Decimal)" Size="8" TypeSQL="money" TypeVB="Decimal" LinqVar="System.Nullable(Of Decimal)" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" />
+      </Type>
+      <ViewHeader>&lt;![CDATA[
+
+Create View [dbo].[SumInvoiceDetails] as 
+ ]]&gt;</ViewHeader>
+      <ViewDetails>&lt;![CDATA[SELECT InvoiceDetails.InvoiceID, Sum(InvoiceDetails.Total) AS SumOfTotal
+        FROM InvoiceDetails
+        GROUP BY InvoiceDetails.InvoiceID;]]&gt;</ViewDetails>
+    </View>
+    <View Name="SumListPaid" Member="SumListPaid">
+      <Type Name="SumListPaid">
+        <Column Name="InvoiceID" Type=" Integer" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar=" Integer" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" />
+        <Column Name="CustomerAc" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" />
+        <Column Name="AddressBill" Type="String" Size="-1" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" />
+        <Column Name="SumOfTotal" Type="System.Nullable(Of Decimal)" Size="8" TypeSQL="money" TypeVB="Decimal" LinqVar="System.Nullable(Of Decimal)" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" />
+        <Column Name="EndPayment" Type="String" Size="10" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" />
+        <Column Name="TotalPaid" Type="System.Nullable(Of Decimal)" Size="8" TypeSQL="money" TypeVB="Decimal" LinqVar="System.Nullable(Of Decimal)" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" />
+        <Column Name="Overdue" Type="System.Nullable(Of Decimal)" Size="8" TypeSQL="money" TypeVB="Decimal" LinqVar="System.Nullable(Of Decimal)" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" />
+      </Type>
+      <ViewHeader>&lt;![CDATA[CREATE VIEW [dbo].[SumListPaid]
+AS
+]]&gt;</ViewHeader>
+      <ViewDetails>&lt;![CDATA[SELECT     dbo.Invoice.InvoiceID, dbo.Invoice.CustomerAc, dbo.Invoice.AddressBill, dbo.SumInvoiceDetails.SumOfTotal, dbo.Invoice.EndPayment, 
+                      dbo.Invoice.TotalPaid, dbo.SumInvoiceDetails.SumOfTotal - dbo.Invoice.TotalPaid AS Overdue
+FROM         dbo.Invoice INNER JOIN
+                      dbo.SumInvoiceDetails ON dbo.Invoice.InvoiceID = dbo.SumInvoiceDetails.InvoiceID
+WHERE     (dbo.Invoice.EndPayment = N'Yes')
+
+]]&gt;</ViewDetails>
+    </View>
+    <View Name="SunAllTotals" Member="SunAllTotals">
+      <Type Name="SunAllTotals">
+        <Column Name="CustomerAc" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" />
+        <Column Name="SumOfSumOfTotal" Type="System.Nullable(Of Decimal)" Size="8" TypeSQL="money" TypeVB="Decimal" LinqVar="System.Nullable(Of Decimal)" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" />
+        <Column Name="SumOfTotalPaid" Type="System.Nullable(Of Decimal)" Size="8" TypeSQL="money" TypeVB="Decimal" LinqVar="System.Nullable(Of Decimal)" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" />
+        <Column Name="SumOfOverdue" Type="System.Nullable(Of Decimal)" Size="8" TypeSQL="money" TypeVB="Decimal" LinqVar="System.Nullable(Of Decimal)" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" />
+      </Type>
+      <ViewHeader>&lt;![CDATA[CREATE VIEW [dbo].[SunAllTotals]
+AS
+]]&gt;</ViewHeader>
+      <ViewDetails>&lt;![CDATA[SELECT     CustomerAc, SUM(SumOfTotal) AS SumOfSumOfTotal, SUM(TotalPaid) AS SumOfTotalPaid, SUM(Overdue) AS SumOfOverdue
+FROM         dbo.History
+GROUP BY CustomerAc
+]]&gt;</ViewDetails>
+    </View>
+    <View Name="View_CustomerPaiment" Member="View_CustomerPaiment">
+      <Type Name="View_CustomerPaiment">
+        <Column Name="CustPaimentID" Type=" Integer" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar=" Integer" IsRequared="false" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" />
+        <Column Name="InvoiceID" Type="System.Nullable(Of Integer)" Size="4" TypeSQL="int" TypeVB="Integer" LinqVar="System.Nullable(Of Integer)" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" />
+        <Column Name="CustomerAc" Type="String" Size="50" TypeSQL="nvarchar" TypeVB="String" LinqVar="String" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" />
+        <Column Name="TotalOfGoods" Type="System.Nullable(Of Decimal)" Size="8" TypeSQL="money" TypeVB="Decimal" LinqVar="System.Nullable(Of Decimal)" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" />
+        <Column Name="AmountPaid" Type="System.Nullable(Of Decimal)" Size="8" TypeSQL="money" TypeVB="Decimal" LinqVar="System.Nullable(Of Decimal)" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" />
+        <Column Name="Overdue" Type="System.Nullable(Of Decimal)" Size="8" TypeSQL="money" TypeVB="Decimal" LinqVar="System.Nullable(Of Decimal)" IsRequared="true" IsPrimary_Key="false" IsForeign_Key="false" IsAutoincrement="false" />
+      </Type>
+      <ViewHeader>&lt;![CDATA[CREATE VIEW [dbo].[View_CustomerPaiment]
+AS
+]]&gt;</ViewHeader>
+      <ViewDetails>&lt;![CDATA[SELECT     CustPaimentID, InvoiceID, CustomerAc, TotalOfGoods, AmountPaid, TotalOfGoods - AmountPaid AS Overdue
+FROM         dbo.CustPaiment
+]]&gt;</ViewDetails>
+    </View>
+  </Database>
+</VBSpiderManager>
