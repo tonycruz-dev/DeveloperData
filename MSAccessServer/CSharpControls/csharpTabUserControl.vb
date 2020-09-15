@@ -820,4 +820,24 @@ Public Class csharpTabUserControl
         Dim objTable As TableNameInfo = CType(TSCmbTables.ComboBox.SelectedItem, TableNameInfo)
         VBCodeEditor.Text = CSClassManager.CSClassToJson(objTable)
     End Sub
+
+    Private Sub ToolStripMenuItem10_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem10.Click
+        If _SelectedDatabase Is Nothing Then
+            Exit Sub
+        End If
+        Dim objTable As TableNameInfo = CType(TSCmbTables.ComboBox.SelectedItem, TableNameInfo)
+        VBCodeEditor.Text = CSModels.CreateDto(objTable, _SelectedDatabase)
+
+
+        'If _SelectedDatabase Is Nothing Then
+        '    Exit Sub
+        'End If
+        'Dim objTable As TableNameInfo = CType(TSCmbTables.ComboBox.SelectedItem, TableNameInfo)
+        'Dim strTB As String = ""
+
+        'For Each t In objTable.GetMasterTables(_SelectedDatabase)
+        '    strTB &= t.RelateTableName & vbNewLine
+        'Next
+        'VBCodeEditor.Text = strTB
+    End Sub
 End Class

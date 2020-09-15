@@ -141,6 +141,11 @@ Public Class vbTabUserControl
         For Each t In objTable.GetMasterTables(_SelectedDatabase)
             strTB &= t.RelateTableName & vbNewLine
         Next
+
+        Dim ralateTables = objTable.GetRalationalTables(_SelectedDatabase)
+        For Each t In ralateTables
+            strTB &= t.RelateTableValue & vbNewLine
+        Next
         VBCodeEditor.Text = strTB
 
 

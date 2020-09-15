@@ -13,6 +13,44 @@ Public Class CSModels
         Return strWriteModel.ToString
 
     End Function
+    Public Shared Function CreateDto(ByVal DT As TableNameInfo, ByVal DB As DatabaseNameInfo) As String
+        Dim sb As New StringBuilder()
+        sb.AppendLine("public class " & DT.TableSingularize & "Dto: ValidatableBindableBase ")
+
+        sb.AppendLine("{")
+        sb.AppendLine(" ")
+        For Each R As ColumnsInfo In DT.ListColumn
+            sb.AppendLine("   private  " & R.VarCSharp & " _" & R.ColumnValue & ";")
+        Next
+        sb.AppendLine(" ")
+        For Each R As ColumnsInfo In DT.ListColumn
+            '                  public int Id { get => _Id; set => SetProperty(ref _Id, value); }
+            sb.AppendLine("   public " & R.VarCSharp & " " & R.ColumnValue & " { get =>" & " _" & R.ColumnValue & "; set => SetProperty(ref" & " _" & R.ColumnValue & " , value); }")
+        Next
+        sb.AppendLine(" ")
+        For Each t In DT.GetMasterTables(DB)
+            'private AccountCustomerDto _accountCustomer;
+            sb.AppendLine("  private  " & t.RelateTableValue & "Dto _" & t.RelateTableValue & ";")
+        Next
+        For Each t In DT.GetMasterTables(DB)
+            sb.AppendLine("  public virtual  " & t.RelateTableValue & "Dto " & t.RelateTableValue & " { get => _" & t.RelateTableSingularize & "; set => SetProperty(ref _" & t.RelateTableSingularize & ", value); }")
+        Next
+        ' public virtual AccountCustomerDto AccountCustomer { get => _accountCustomer; set => SetProperty(ref _accountCustomer, value); }
+        ' public List<AccountOrderDetailDto> AccountOrderDetails { get => _accountOrderDetails; set => SetProperty(ref _accountOrderDetails , value); }
+        ' Dim ralateTables = objTable.GetRalationalTables(_SelectedDatabase)
+        For Each t In DT.GetRalationalTables(DB)
+            'private AccountCustomerDto _accountCustomer;
+            sb.AppendLine("  private  " & t.RelateTableValue & "Dto _" & t.RelateTableValue & ";")
+        Next
+        For Each t In DT.GetRalationalTables(DB)
+            sb.AppendLine(" public List<" & t.RelateTableValue & "Dto> " & t.RelateTableValue & " { Get => _" & t.RelateTableValue & "; Set => SetProperty(ref _" & t.RelateTableValue & " , value); }")
+        Next
+
+
+        sb.AppendLine("}")
+        sb.AppendLine(" ")
+        Return sb.ToString
+    End Function
     Public Shared Function CreateJSonCSClass(ByVal DT As TableNameInfo) As String
         Dim strWriteModel As New StringBuilder()
         strWriteModel.AppendLine("public class " & LowerTheFistChar(DT.TableSingularize) & "Vm")
@@ -21,7 +59,7 @@ Public Class CSModels
             'public int Number { get; set; }
             strWriteModel.AppendLine("    public " & R.VarCSharp & " " & LowerTheFistChar(R.ColumnValue) & " { get; set;}  ")
         Next
-        strWriteModel.AppendLine("}")
+
         Return strWriteModel.ToString
 
     End Function
@@ -222,6 +260,7 @@ Public Class CSModels
         sb.Append(SubStrSelect)
         Return sb.ToString
     End Function
+
     Shared Function LowerTheFistChar(str As String) As String
         Return Char.ToLower(str.Chars(0)) + str.Substring(1)
     End Function

@@ -43,6 +43,7 @@ Partial Class csharpTabUserControl
         Me.CJSONViewModelToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TSMVBRiaUpdate = New System.Windows.Forms.ToolStripMenuItem()
         Me.VBClassRiaInsertToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CFormatedJsonToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator()
         Me.TestClassToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TestClassFKToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -115,7 +116,7 @@ Partial Class csharpTabUserControl
         Me.PasteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
         Me.VBCodeEditor = New MSAccessServer.CodeEditor()
-        Me.CFormatedJsonToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem10 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStrip1.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -184,7 +185,7 @@ Partial Class csharpTabUserControl
         '
         Me.ToolStripDropDownButton1.BackColor = System.Drawing.Color.Transparent
         Me.ToolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.ToolStripDropDownButton1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.VBModelToolStripMenuItem, Me.ModelInotifyToolStripMenuItem, Me.VBClass2010SampleData, Me.VBClass2010XmlSampleToolStripMenuItem, Me.ToolStripSeparator5, Me.VBClassRia2010, Me.TSMVBRiaSelect, Me.CJSONViewModelToolStripMenuItem, Me.TSMVBRiaUpdate, Me.VBClassRiaInsertToolStripMenuItem, Me.CFormatedJsonToolStripMenuItem, Me.ToolStripMenuItem1, Me.TestClassToolStripMenuItem, Me.TestClassFKToolStripMenuItem, Me.ToolStripMenuItem6, Me.ClassInfoToolStripMenuItem, Me.ClassInfoSelectToolStripMenuItem, Me.ClassInfoUpdateToolStripMenuItem, Me.ClassInfoDeleteToolStripMenuItem, Me.ClassInfoInsertToolStripMenuItem})
+        Me.ToolStripDropDownButton1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.VBModelToolStripMenuItem, Me.ToolStripMenuItem10, Me.ModelInotifyToolStripMenuItem, Me.VBClass2010SampleData, Me.VBClass2010XmlSampleToolStripMenuItem, Me.ToolStripSeparator5, Me.VBClassRia2010, Me.TSMVBRiaSelect, Me.CJSONViewModelToolStripMenuItem, Me.TSMVBRiaUpdate, Me.VBClassRiaInsertToolStripMenuItem, Me.CFormatedJsonToolStripMenuItem, Me.ToolStripMenuItem1, Me.TestClassToolStripMenuItem, Me.TestClassFKToolStripMenuItem, Me.ToolStripMenuItem6, Me.ClassInfoToolStripMenuItem, Me.ClassInfoSelectToolStripMenuItem, Me.ClassInfoUpdateToolStripMenuItem, Me.ClassInfoDeleteToolStripMenuItem, Me.ClassInfoInsertToolStripMenuItem})
         Me.ToolStripDropDownButton1.Image = Global.MSAccessServer.My.Resources.Resources.VBProject
         Me.ToolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripDropDownButton1.Name = "ToolStripDropDownButton1"
@@ -264,6 +265,13 @@ Partial Class csharpTabUserControl
         Me.VBClassRiaInsertToolStripMenuItem.Name = "VBClassRiaInsertToolStripMenuItem"
         Me.VBClassRiaInsertToolStripMenuItem.Size = New System.Drawing.Size(243, 22)
         Me.VBClassRiaInsertToolStripMenuItem.Text = "C# Class Update"
+        '
+        'CFormatedJsonToolStripMenuItem
+        '
+        Me.CFormatedJsonToolStripMenuItem.Image = Global.MSAccessServer.My.Resources.Resources.DatabaseScript
+        Me.CFormatedJsonToolStripMenuItem.Name = "CFormatedJsonToolStripMenuItem"
+        Me.CFormatedJsonToolStripMenuItem.Size = New System.Drawing.Size(243, 22)
+        Me.CFormatedJsonToolStripMenuItem.Text = "C# Formated Json"
         '
         'ToolStripMenuItem1
         '
@@ -760,12 +768,12 @@ Partial Class csharpTabUserControl
         Me.VBCodeEditor.TabIndex = 5
         Me.VBCodeEditor.Text = ""
         '
-        'CFormatedJsonToolStripMenuItem
+        'ToolStripMenuItem10
         '
-        Me.CFormatedJsonToolStripMenuItem.Image = Global.MSAccessServer.My.Resources.Resources.DatabaseScript
-        Me.CFormatedJsonToolStripMenuItem.Name = "CFormatedJsonToolStripMenuItem"
-        Me.CFormatedJsonToolStripMenuItem.Size = New System.Drawing.Size(243, 22)
-        Me.CFormatedJsonToolStripMenuItem.Text = "C# Formated Json"
+        Me.ToolStripMenuItem10.Image = Global.MSAccessServer.My.Resources.Resources.vbclassinfo
+        Me.ToolStripMenuItem10.Name = "ToolStripMenuItem10"
+        Me.ToolStripMenuItem10.Size = New System.Drawing.Size(243, 22)
+        Me.ToolStripMenuItem10.Text = "Class DTO"
         '
         'csharpTabUserControl
         '
@@ -875,4 +883,5 @@ Partial Class csharpTabUserControl
     Friend WithEvents ToolStripMenuItem9 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents JavaScripRepositoryToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents CFormatedJsonToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem10 As ToolStripMenuItem
 End Class
