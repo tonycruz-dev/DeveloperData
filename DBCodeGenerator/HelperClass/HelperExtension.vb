@@ -8,6 +8,13 @@ Module HelperExtension
         Return """" & _StrValue & """"
     End Function
     <Extension()>
+    Public Function AtDquotes(_StrValue As String) As String
+        Dim strFormat = "@"
+        Dim returnVal = """" & _StrValue & """"
+        '//Return _StrValue
+        Return (strFormat & returnVal).ToString()
+    End Function
+    <Extension()>
     Public Function Squotes(_StrValue As String) As String
         Return "'" & _StrValue & "'"
     End Function
@@ -146,20 +153,28 @@ Module HelperExtension
                 If dr.IsNull(R.ColumnName) Then
                     Return "".Dquotes
                 Else
-                    Return dr(R.ColumnName).ToString.Dquotes
+                    Return dr(R.ColumnName).ToString.AtDquotes
                 End If
 
-            Case "smallint", "int", "int identity", "real", "money", "numeric"
+            Case "smallint", "int", "int identity", "real", "numeric"
                 If dr.IsNull(R.ColumnName) Then
                     Return 0
                 End If
                 Return dr(R.ColumnName).ToString
+            Case "money"
+                If dr.IsNull(R.ColumnName) Then
+                    Return "0M"
+                End If
+                Return dr(R.ColumnName).ToString + "M"
 
             Case "bit"
-                Return dr(R.ColumnName)
+                If dr.IsNull(R.ColumnName) Then
+                    Return "false"
+                End If
+                Return dr(R.ColumnName).ToString.ToLower
             Case "datetime"
                 If dr.IsNull(R.ColumnName) Then
-                    Return "Nothing"
+                    Return "null"
                 Else
                     Dim DateVal As Date = dr(R.ColumnName)
                     Return "DateTime.Parse(" & Format(dr(R.ColumnName), "yyyy-MM-dd").ToString.Dquotes & ")"
@@ -167,7 +182,7 @@ Module HelperExtension
 
             Case "smalldatetime"
                 If dr.IsNull(R.ColumnName) Then
-                    Return "Nothing"
+                    Return "null"
                 Else
                     Return "DateTime.Parse(" & Format(dr(R.ColumnName), "yyyy-MM-dd").ToString.Dquotes & ")"
                 End If

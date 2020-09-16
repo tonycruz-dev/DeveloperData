@@ -30,23 +30,25 @@ Public Class CSModels
         sb.AppendLine(" ")
         For Each t In DT.GetMasterTables(DB)
             'private AccountCustomerDto _accountCustomer;
-            sb.AppendLine("  private  " & t.RelateTableSingularize & "Dto _" & LowerTheFistChar(t.RelateTableSingularize) & ";")
+            sb.AppendLine("   private  " & t.RelateTableSingularize & "Dto _" & t.RelateTableSingularize.LowerTheFistChar & ";")
         Next
         For Each t In DT.GetMasterTables(DB)
-            sb.AppendLine("  public virtual  " & t.RelateTableSingularize & "Dto " & t.RelateTableSingularize & " { get => _" & LowerTheFistChar(t.RelateTableSingularize) & "; set => SetProperty(ref _" & LowerTheFistChar(t.RelateTableSingularize) & ", value); }")
+            sb.AppendLine("   public virtual  " & t.RelateTableSingularize & "Dto " & t.RelateTableSingularize & " { get => _" & t.RelateTableSingularize.LowerTheFistChar & "; set => SetProperty(ref _" & t.RelateTableSingularize.LowerTheFistChar & ", value); }")
         Next
         ' public virtual AccountCustomerDto AccountCustomer { get => _accountCustomer; set => SetProperty(ref _accountCustomer, value); }
         ' public List<AccountOrderDetailDto> AccountOrderDetails { get => _accountOrderDetails; set => SetProperty(ref _accountOrderDetails , value); }
         ' Dim ralateTables = objTable.GetRalationalTables(_SelectedDatabase)
         For Each t In DT.GetRalationalTables(DB)
-            'private AccountCustomerDto _accountCustomer;
-            'private List<AccountOrderDetailDto> _accountOrderDetails;
-            sb.AppendLine("  private  List<" & t.RelateTableSingularize & "Dto> _" & LowerTheFistChar(t.RelateTablePluralize) & ";")
+            sb.AppendLine("   private  List<" & t.RelateTableSingularize & "Dto> _" & t.RelateTablePluralize.LowerTheFistChar & ";")
         Next
         For Each t In DT.GetRalationalTables(DB)
-            sb.AppendLine(" public List<" & t.RelateTableValue & "Dto> " & t.RelateTableValue & " { Get => _" & LowerTheFistChar(t.RelateTablePluralize) & "; Set => SetProperty(ref _" & LowerTheFistChar(t.RelateTablePluralize) & " , value); }")
+            sb.AppendLine("   public List<" & t.RelateTableSingularize & "Dto> " & t.RelateTableValue & " { set => _" & t.RelateTablePluralize.LowerTheFistChar & "; set => SetProperty(ref _" & t.RelateTablePluralize.LowerTheFistChar & " , value); }")
         Next
-
+        ' sb.AppendLine("              this." & col.ColumnValue.LowerTheFistChar & " = " & IIf(col.TypeVB = "String", "".QT & ";", 0 & ";"))
+        ' private AccountCustomerDto _accountCustomer;
+        ' public virtual  AccountCustomerDto AccountCustomer { get => _accountCustomer; set => SetProperty(ref _accountCustomer, value); }
+        ' private List<AccountOrderDetailDto> _accountOrderDetails;
+        ' public List<AccountOrderDetailsDto> AccountOrderDetails { Get => _accountOrderDetails; Set => SetProperty(ref _accountOrderDetails , value); }
 
         sb.AppendLine("}")
         sb.AppendLine(" ")

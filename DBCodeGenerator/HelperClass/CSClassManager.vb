@@ -24,7 +24,12 @@ Public Class CSClassManager
     Private Shared Function CsharpWriteautoimplentProperties(ByVal DT As TableNameInfo) As String
         Dim strWriteModel As New StringBuilder
         For Each R As ColumnsInfo In DT.ListColumn
-            strWriteModel.AppendLine("    public " & R.VarCSharp & " " & R.ColumnValue & " { get;set;} ")
+            If R.IsRequared Or R.LinqVar.ToLower = "string" Then
+                strWriteModel.AppendLine("    public " & R.VarCSharp & " " & R.ColumnValue & " { get;set;} ")
+            Else
+                strWriteModel.AppendLine("    public " & R.VarCSharp & "? " & R.ColumnValue & " { get;set;} ")
+            End If
+
         Next
         Return strWriteModel.ToString
     End Function
@@ -95,7 +100,7 @@ Public Class CSClassManager
         Dim strWriteModel As New StringBuilder()
 
         strWriteModel.AppendLine(HelpClass.GetTestingListCollectionCS(DT))
-        strWriteModel.Replace("[TABLENAME]", DT.TableValue)
+        strWriteModel.Replace("[TABLENAME]", DT.TableSingularize)
         Return strWriteModel.ToString
 
     End Function

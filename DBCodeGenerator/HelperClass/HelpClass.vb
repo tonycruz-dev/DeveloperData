@@ -143,20 +143,20 @@ Public Class HelpClass
         End If
 
         ' public static List<Customers> TestListCustomers()
-        sb.AppendLine("public static List<[TABLENAME]> TestList[TABLENAME]()")
+        sb.AppendLine("public static List<" & DT.TableSingularize & "> TestList" & DT.TableSingularize & "()")
         sb.AppendLine("  {")
-        sb.AppendLine("    List<[TABLENAME]> List[TABLENAME] = new List<[TABLENAME]>()")
+        sb.AppendLine("    List<" & DT.TableSingularize & "> List" & DT.TableSingularize & " = new List<" & DT.TableSingularize & ">();")
         'List<Customers> ListCustomers = new List<Customers>();
         For Each r In dsTB.Rows
-            sb.Append("    List[TABLENAME].Add(new [TABLENAME]  {")
+            sb.Append("    List" & DT.TableSingularize & ".Add(new " & DT.TableSingularize & "  {")
             Dim sbConv As New StringBuilder
             For Each col In DT.ListColumn
                 sbConv.Append(" " & col.ColumnValue & "  = " & col.GetTypeData(r) & ",")
             Next
             Dim mylastComar = sbConv.ToString.LastIndexOf(",")
-            sb.AppendLine(sbConv.Remove(mylastComar, 1).ToString & "})")
+            sb.AppendLine(sbConv.Remove(mylastComar, 1).ToString & "});")
         Next
-        sb.AppendLine(" Return List[TABLENAME] ;")
+        sb.AppendLine(" return List" & DT.TableSingularize & " ;")
 
         sb.AppendLine(" }")
         Return sb.ToString
