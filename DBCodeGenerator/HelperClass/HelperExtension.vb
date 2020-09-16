@@ -233,5 +233,8 @@ Module HelperExtension
 
         Return result
     End Function
-
+    '<Extension()>
+    'Public Function LowerTheFistChar(str As String) As String
+    '    Return Char.ToLower(str.Chars(0)) + str.Substring(1)
+    'End Function
 End Module

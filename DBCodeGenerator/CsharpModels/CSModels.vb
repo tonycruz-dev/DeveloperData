@@ -30,20 +30,21 @@ Public Class CSModels
         sb.AppendLine(" ")
         For Each t In DT.GetMasterTables(DB)
             'private AccountCustomerDto _accountCustomer;
-            sb.AppendLine("  private  " & t.RelateTableValue & "Dto _" & t.RelateTableValue & ";")
+            sb.AppendLine("  private  " & t.RelateTableSingularize & "Dto _" & LowerTheFistChar(t.RelateTableSingularize) & ";")
         Next
         For Each t In DT.GetMasterTables(DB)
-            sb.AppendLine("  public virtual  " & t.RelateTableValue & "Dto " & t.RelateTableValue & " { get => _" & t.RelateTableSingularize & "; set => SetProperty(ref _" & t.RelateTableSingularize & ", value); }")
+            sb.AppendLine("  public virtual  " & t.RelateTableSingularize & "Dto " & t.RelateTableSingularize & " { get => _" & LowerTheFistChar(t.RelateTableSingularize) & "; set => SetProperty(ref _" & LowerTheFistChar(t.RelateTableSingularize) & ", value); }")
         Next
         ' public virtual AccountCustomerDto AccountCustomer { get => _accountCustomer; set => SetProperty(ref _accountCustomer, value); }
         ' public List<AccountOrderDetailDto> AccountOrderDetails { get => _accountOrderDetails; set => SetProperty(ref _accountOrderDetails , value); }
         ' Dim ralateTables = objTable.GetRalationalTables(_SelectedDatabase)
         For Each t In DT.GetRalationalTables(DB)
             'private AccountCustomerDto _accountCustomer;
-            sb.AppendLine("  private  " & t.RelateTableValue & "Dto _" & t.RelateTableValue & ";")
+            'private List<AccountOrderDetailDto> _accountOrderDetails;
+            sb.AppendLine("  private  List<" & t.RelateTableSingularize & "Dto> _" & LowerTheFistChar(t.RelateTablePluralize) & ";")
         Next
         For Each t In DT.GetRalationalTables(DB)
-            sb.AppendLine(" public List<" & t.RelateTableValue & "Dto> " & t.RelateTableValue & " { Get => _" & t.RelateTableValue & "; Set => SetProperty(ref _" & t.RelateTableValue & " , value); }")
+            sb.AppendLine(" public List<" & t.RelateTableValue & "Dto> " & t.RelateTableValue & " { Get => _" & LowerTheFistChar(t.RelateTablePluralize) & "; Set => SetProperty(ref _" & LowerTheFistChar(t.RelateTablePluralize) & " , value); }")
         Next
 
 
