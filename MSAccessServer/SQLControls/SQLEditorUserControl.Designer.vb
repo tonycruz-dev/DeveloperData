@@ -24,7 +24,6 @@ Partial Class SQLEditorUserControl
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SQLEditorUserControl))
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
-        Me.SqlServerEditor = New MSAccessServer.CodeEditor()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.RunQueryButton = New System.Windows.Forms.ToolStripButton()
         Me.toolStripSeparator = New System.Windows.Forms.ToolStripSeparator()
@@ -48,6 +47,8 @@ Partial Class SQLEditorUserControl
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem5 = New System.Windows.Forms.ToolStripSeparator()
+        Me.GenarateInsertToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.ToolStrip2 = New System.Windows.Forms.ToolStrip()
@@ -61,8 +62,8 @@ Partial Class SQLEditorUserControl
         Me.PasteToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         Me.toolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
         Me.HelpToolStripButton = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripMenuItem5 = New System.Windows.Forms.ToolStripSeparator()
-        Me.GenarateInsertToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SqlServerEditor = New MSAccessServer.CodeEditor()
+        Me.SelecteByIdToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
@@ -91,18 +92,6 @@ Partial Class SQLEditorUserControl
         Me.SplitContainer1.Size = New System.Drawing.Size(710, 400)
         Me.SplitContainer1.SplitterDistance = 201
         Me.SplitContainer1.TabIndex = 0
-        '
-        'SqlServerEditor
-        '
-        Me.SqlServerEditor.CodeLanguage = MSAccessServer.CodeLanguage.SQLServer
-        Me.SqlServerEditor.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.SqlServerEditor.EnableAutoDragDrop = True
-        Me.SqlServerEditor.Font = New System.Drawing.Font("Consolas", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SqlServerEditor.Location = New System.Drawing.Point(0, 25)
-        Me.SqlServerEditor.Name = "SqlServerEditor"
-        Me.SqlServerEditor.Size = New System.Drawing.Size(710, 176)
-        Me.SqlServerEditor.TabIndex = 3
-        Me.SqlServerEditor.Text = ""
         '
         'ToolStrip1
         '
@@ -188,7 +177,7 @@ Partial Class SQLEditorUserControl
         'ToolStripLabel2
         '
         Me.ToolStripLabel2.Name = "ToolStripLabel2"
-        Me.ToolStripLabel2.Size = New System.Drawing.Size(39, 22)
+        Me.ToolStripLabel2.Size = New System.Drawing.Size(37, 22)
         Me.ToolStripLabel2.Text = "Table:"
         '
         'TSCmbTables
@@ -200,7 +189,7 @@ Partial Class SQLEditorUserControl
         '
         Me.ToolStripDropDownButton1.BackColor = System.Drawing.Color.Transparent
         Me.ToolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.ToolStripDropDownButton1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SelectToolStripMenuItem, Me.DeleteToolStripMenuItem, Me.InsertToolStripMenuItem, Me.UpdateToolStripMenuItem, Me.ToolStripMenuItem1, Me.GenerateInsertToolStripMenuItem, Me.ToolStripMenuItem2, Me.ToolStripMenuItem3, Me.ToolStripMenuItem4, Me.ToolStripMenuItem5, Me.GenarateInsertToolStripMenuItem})
+        Me.ToolStripDropDownButton1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SelectToolStripMenuItem, Me.DeleteToolStripMenuItem, Me.InsertToolStripMenuItem, Me.UpdateToolStripMenuItem, Me.ToolStripMenuItem1, Me.GenerateInsertToolStripMenuItem, Me.SelecteByIdToolStripMenuItem, Me.ToolStripMenuItem2, Me.ToolStripMenuItem3, Me.ToolStripMenuItem4, Me.ToolStripMenuItem5, Me.GenarateInsertToolStripMenuItem})
         Me.ToolStripDropDownButton1.Image = CType(resources.GetObject("ToolStripDropDownButton1.Image"), System.Drawing.Image)
         Me.ToolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripDropDownButton1.Name = "ToolStripDropDownButton1"
@@ -212,7 +201,7 @@ Partial Class SQLEditorUserControl
         Me.SelectToolStripMenuItem.Image = CType(resources.GetObject("SelectToolStripMenuItem.Image"), System.Drawing.Image)
         Me.SelectToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Fuchsia
         Me.SelectToolStripMenuItem.Name = "SelectToolStripMenuItem"
-        Me.SelectToolStripMenuItem.Size = New System.Drawing.Size(199, 22)
+        Me.SelectToolStripMenuItem.Size = New System.Drawing.Size(228, 22)
         Me.SelectToolStripMenuItem.Text = "Select"
         '
         'DeleteToolStripMenuItem
@@ -220,7 +209,7 @@ Partial Class SQLEditorUserControl
         Me.DeleteToolStripMenuItem.Image = CType(resources.GetObject("DeleteToolStripMenuItem.Image"), System.Drawing.Image)
         Me.DeleteToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Fuchsia
         Me.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem"
-        Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(199, 22)
+        Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(228, 22)
         Me.DeleteToolStripMenuItem.Text = "Delete"
         '
         'InsertToolStripMenuItem
@@ -228,7 +217,7 @@ Partial Class SQLEditorUserControl
         Me.InsertToolStripMenuItem.Image = CType(resources.GetObject("InsertToolStripMenuItem.Image"), System.Drawing.Image)
         Me.InsertToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Fuchsia
         Me.InsertToolStripMenuItem.Name = "InsertToolStripMenuItem"
-        Me.InsertToolStripMenuItem.Size = New System.Drawing.Size(199, 22)
+        Me.InsertToolStripMenuItem.Size = New System.Drawing.Size(228, 22)
         Me.InsertToolStripMenuItem.Text = "Insert"
         '
         'UpdateToolStripMenuItem
@@ -236,20 +225,20 @@ Partial Class SQLEditorUserControl
         Me.UpdateToolStripMenuItem.Image = CType(resources.GetObject("UpdateToolStripMenuItem.Image"), System.Drawing.Image)
         Me.UpdateToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Fuchsia
         Me.UpdateToolStripMenuItem.Name = "UpdateToolStripMenuItem"
-        Me.UpdateToolStripMenuItem.Size = New System.Drawing.Size(199, 22)
+        Me.UpdateToolStripMenuItem.Size = New System.Drawing.Size(228, 22)
         Me.UpdateToolStripMenuItem.Text = "Update"
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(196, 6)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(225, 6)
         '
         'GenerateInsertToolStripMenuItem
         '
         Me.GenerateInsertToolStripMenuItem.Image = CType(resources.GetObject("GenerateInsertToolStripMenuItem.Image"), System.Drawing.Image)
         Me.GenerateInsertToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Fuchsia
         Me.GenerateInsertToolStripMenuItem.Name = "GenerateInsertToolStripMenuItem"
-        Me.GenerateInsertToolStripMenuItem.Size = New System.Drawing.Size(199, 22)
+        Me.GenerateInsertToolStripMenuItem.Size = New System.Drawing.Size(228, 22)
         Me.GenerateInsertToolStripMenuItem.Text = "Select Create Procedure"
         '
         'ToolStripMenuItem2
@@ -257,7 +246,7 @@ Partial Class SQLEditorUserControl
         Me.ToolStripMenuItem2.Image = CType(resources.GetObject("ToolStripMenuItem2.Image"), System.Drawing.Image)
         Me.ToolStripMenuItem2.ImageTransparentColor = System.Drawing.Color.Fuchsia
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(199, 22)
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(228, 22)
         Me.ToolStripMenuItem2.Text = "Delete Procedures"
         '
         'ToolStripMenuItem3
@@ -265,7 +254,7 @@ Partial Class SQLEditorUserControl
         Me.ToolStripMenuItem3.Image = CType(resources.GetObject("ToolStripMenuItem3.Image"), System.Drawing.Image)
         Me.ToolStripMenuItem3.ImageTransparentColor = System.Drawing.Color.Fuchsia
         Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
-        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(199, 22)
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(228, 22)
         Me.ToolStripMenuItem3.Text = "Insert Procedures"
         '
         'ToolStripMenuItem4
@@ -273,8 +262,19 @@ Partial Class SQLEditorUserControl
         Me.ToolStripMenuItem4.Image = CType(resources.GetObject("ToolStripMenuItem4.Image"), System.Drawing.Image)
         Me.ToolStripMenuItem4.ImageTransparentColor = System.Drawing.Color.Fuchsia
         Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
-        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(199, 22)
+        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(228, 22)
         Me.ToolStripMenuItem4.Text = "Update Procedures"
+        '
+        'ToolStripMenuItem5
+        '
+        Me.ToolStripMenuItem5.Name = "ToolStripMenuItem5"
+        Me.ToolStripMenuItem5.Size = New System.Drawing.Size(225, 6)
+        '
+        'GenarateInsertToolStripMenuItem
+        '
+        Me.GenarateInsertToolStripMenuItem.Name = "GenarateInsertToolStripMenuItem"
+        Me.GenarateInsertToolStripMenuItem.Size = New System.Drawing.Size(228, 22)
+        Me.GenarateInsertToolStripMenuItem.Text = "Genarate Insert"
         '
         'ToolStripSeparator3
         '
@@ -381,16 +381,25 @@ Partial Class SQLEditorUserControl
         Me.HelpToolStripButton.Size = New System.Drawing.Size(23, 22)
         Me.HelpToolStripButton.Text = "He&lp"
         '
-        'ToolStripMenuItem5
+        'SqlServerEditor
         '
-        Me.ToolStripMenuItem5.Name = "ToolStripMenuItem5"
-        Me.ToolStripMenuItem5.Size = New System.Drawing.Size(196, 6)
+        Me.SqlServerEditor.CodeLanguage = MSAccessServer.CodeLanguage.SQLServer
+        Me.SqlServerEditor.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.SqlServerEditor.EnableAutoDragDrop = True
+        Me.SqlServerEditor.Font = New System.Drawing.Font("Consolas", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SqlServerEditor.Location = New System.Drawing.Point(0, 25)
+        Me.SqlServerEditor.Name = "SqlServerEditor"
+        Me.SqlServerEditor.Size = New System.Drawing.Size(710, 176)
+        Me.SqlServerEditor.TabIndex = 3
+        Me.SqlServerEditor.Text = ""
         '
-        'GenarateInsertToolStripMenuItem
+        'SelecteByIdToolStripMenuItem
         '
-        Me.GenarateInsertToolStripMenuItem.Name = "GenarateInsertToolStripMenuItem"
-        Me.GenarateInsertToolStripMenuItem.Size = New System.Drawing.Size(199, 22)
-        Me.GenarateInsertToolStripMenuItem.Text = "Genarate Insert"
+        Me.SelecteByIdToolStripMenuItem.Image = CType(resources.GetObject("SelecteByIdToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.SelecteByIdToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Fuchsia
+        Me.SelecteByIdToolStripMenuItem.Name = "SelecteByIdToolStripMenuItem"
+        Me.SelecteByIdToolStripMenuItem.Size = New System.Drawing.Size(228, 22)
+        Me.SelecteByIdToolStripMenuItem.Text = "Select Create Procedure By Id"
         '
         'SQLEditorUserControl
         '
@@ -453,5 +462,5 @@ Partial Class SQLEditorUserControl
     Friend WithEvents HelpToolStripButton As System.Windows.Forms.ToolStripButton
     Friend WithEvents ToolStripMenuItem5 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents GenarateInsertToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-
+    Friend WithEvents SelecteByIdToolStripMenuItem As ToolStripMenuItem
 End Class

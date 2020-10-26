@@ -130,6 +130,20 @@ Public Class SQLCodeGen
         End If
         Return StrSelect
     End Function
+    Public Shared Function CreateSelectByIdCommand(ByVal DT As TableNameInfo) As String
+        Dim sbSelect As New StringBuilder("SELECT ")
+        For Each col In DT.ListColumn
+            sbSelect.Append("[" & col.ColumnName & "],")
+        Next
+        Dim mylastComar = sbSelect.ToString.LastIndexOf(",")
+        Dim StrSelect = sbSelect.Remove(mylastComar, 1).ToString
+
+        Dim colPk = (From c In DT.ListColumn Where c.IsPrimary_Key = True Select c).Take(1).SingleOrDefault
+
+        StrSelect &= " From [" & DT.TableName & "] WHERE " & colPk.ColumnName & "=@" & colPk.ColumnValue
+
+        Return StrSelect
+    End Function
     Public Shared Function CreateSelectFilter(ByVal DT As TableNameInfo, ByVal colSearch As ColumnsInfo) As String
         Dim sbSelect As New StringBuilder("SELECT ")
         For Each col In DT.ListColumn
@@ -192,10 +206,10 @@ Public Class SQLCodeGen
 
         Dim sbInsert As New StringBuilder("INSERT INTO " & DT.TableName.ToLower & " (")
 
-        'Dim R As ColumnsInfo
+
         Dim RecNum As Integer = 0
 
-        Dim qc = From col In DT.ListColumn Where col.IsAutoincrement = False _
+        Dim qc = From col In DT.ListColumn Where col.IsAutoincrement = False
                  Select col
         For Each col As ColumnsInfo In qc
             sbInsert.Append(col.ColumnName & ",")
@@ -203,6 +217,63 @@ Public Class SQLCodeGen
         Dim mylastComar = sbInsert.ToString.LastIndexOf(",")
         Dim StrInsert = sbInsert.Remove(mylastComar, 1).ToString & ")"
         Return StrInsert.ToString
+    End Function
+    Public Shared Function CreateStoredProcedureSelectAll(ByVal DT As TableNameInfo) As String
+        Dim sb As New StringBuilder()
+        sb.AppendLine("CREATE PROCEDURE [dbo].[sp_" & DT.TableValue & "_GetAll] AS")
+        sb.AppendLine("    BEGIN")
+        sb.AppendLine("       set nocount on;")
+        sb.AppendLine("       " & CreateSelectCommandAll(DT))
+        sb.AppendLine("    End")
+        Return sb.ToString
+    End Function
+    Public Shared Function CreateStoredProcedureSelectById(ByVal DT As TableNameInfo) As String
+        Dim sb As New StringBuilder()
+        Dim colPk = (From c In DT.ListColumn Where c.IsPrimary_Key = True Select c).Take(1).SingleOrDefault
+        sb.AppendLine("CREATE PROCEDURE [dbo].[sp_" & DT.TableValue & "_GetById] AS")
+        sb.AppendLine("    @" & colPk.ColumnValue & " " & colPk.TypeSQL)
+        sb.AppendLine("    BEGIN")
+        sb.AppendLine("       set nocount on;")
+        sb.AppendLine("       " & CreateSelectByIdCommand(DT))
+        sb.AppendLine("    End")
+
+        Return sb.ToString
+    End Function
+
+    Public Shared Function CreateStoredProcedureDelete(ByVal DT As TableNameInfo) As String
+        Dim sb As New StringBuilder()
+        Dim colPk = (From c In DT.ListColumn Where c.IsPrimary_Key = True Select c).Take(1).SingleOrDefault
+        sb.AppendLine("CREATE PROCEDURE [dbo].[sp_" & DT.TableValue & "_Delete] AS")
+        sb.AppendLine("    @" & colPk.ColumnValue & " " & colPk.TypeSQL)
+        sb.AppendLine("    BEGIN")
+        sb.AppendLine("       set nocount on;")
+        sb.AppendLine("       " & CreateSQLDELETECommandParam(DT))
+        sb.AppendLine("    End")
+        Return sb.ToString
+    End Function
+    Public Shared Function CreateStoredProcedureInsert(ByVal DT As TableNameInfo) As String
+        Dim sb As New StringBuilder()
+        Dim colPk = (From c In DT.ListColumn Where c.IsPrimary_Key = True Select c).Take(1).SingleOrDefault
+        sb.AppendLine("CREATE PROCEDURE [dbo].[sp_" & DT.TableValue & "_Insert]")
+        Dim sbParam As New StringBuilder()
+        For Each col In DT.ListColumn
+            sbParam.AppendLine("    @" & col.ColumnValue & " " & col.TypeSQL & ",")
+        Next
+        Dim mylastComar = sbParam.ToString.LastIndexOf(",")
+        Dim StrParams = sbParam.Remove(mylastComar, 1).ToString
+
+        sb.AppendLine("    " & StrParams)
+        sb.AppendLine("    AS")
+        sb.AppendLine("    BEGIN")
+        sb.AppendLine("       set nocount on;")
+        sb.AppendLine("       --DECLARE @InsertedRows AS TABLE (Id int);;")
+        sb.AppendLine("       --insert into [dbo].[Sale]([CashierId],[SaleDate],[SubTotal],[Tax],[Total]) OUTPUT Inserted.Id INTO @InsertedRows;")
+        sb.AppendLine("       --values(@CashierId,@SaleDate,@SubTotal,@Tax,@Total);")
+        sb.AppendLine("       -- ")
+        sb.AppendLine("       --  SELECT Id FROM @InsertedRows")
+        sb.AppendLine("       " & CreateInsert(DT))
+        sb.AppendLine("    END")
+        Return sb.ToString
     End Function
 
 

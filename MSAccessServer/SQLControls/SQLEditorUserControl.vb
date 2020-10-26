@@ -139,31 +139,70 @@ Public Class SQLEditorUserControl
     End Sub
 
     Private Sub ToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem3.Click
-        If _SelectedDatabase Is Nothing Then
-            Exit Sub
+        If Not _SelectedDatabase Is Nothing Then
+            Dim objTable As TableNameInfo = CType(TSCmbTables.ComboBox.SelectedItem, TableNameInfo)
+
+            Dim frmResults As New FormResultsDisplay
+            frmResults.TextBoxResults.Text = SQLCodeGen.CreateStoredProcedureInsert(objTable)
+            frmResults.Show()
         End If
-        Dim objTable As TableNameInfo = CType(TSCmbTables.ComboBox.SelectedItem, TableNameInfo)
-        'objTable.Database = _SelectedDatabase
 
-        Dim frmTable As New FormSqlInsertGenerator(_SelectedDatabase)
-        Dim cols As List(Of ColumnsInfo) = Nothing
-        Dim whereClose = ""
-        Dim isOK = frmTable.ShowDialog()
-        Dim selectedTable As TableNameInfo = Nothing
+        'If _SelectedDatabase Is Nothing Then
+        '    Exit Sub
+        'End If
+        'Dim objTable As TableNameInfo = CType(TSCmbTables.ComboBox.SelectedItem, TableNameInfo)
+        ''objTable.Database = _SelectedDatabase
 
-        If isOK = DialogResult.OK Then
-            selectedTable = frmTable.SelectedTable
+        'Dim frmTable As New FormSqlInsertGenerator(_SelectedDatabase)
+        'Dim cols As List(Of ColumnsInfo) = Nothing
+        'Dim whereClose = ""
+        'Dim isOK = frmTable.ShowDialog()
+        'Dim selectedTable As TableNameInfo = Nothing
 
-            cols = frmTable.listSelectedColumns
-            whereClose = frmTable.WhereClose
-            frmTable.Close()
-        Else
-            frmTable.Close()
-            Exit Sub
-        End If
-        Dim frmResults As New FormResultsDisplay
-        frmResults.TextBoxResults.Text = VBClassManager.InsertSqlCollectionSample(selectedTable, cols, whereClose)
-        frmResults.Show()
+        'If isOK = DialogResult.OK Then
+        '    selectedTable = frmTable.SelectedTable
+
+        '    cols = frmTable.listSelectedColumns
+        '    whereClose = frmTable.WhereClose
+        '    frmTable.Close()
+        'Else
+        '    frmTable.Close()
+        '    Exit Sub
+        'End If
+        'Dim frmResults As New FormResultsDisplay
+        'frmResults.TextBoxResults.Text = VBClassManager.InsertSqlCollectionSample(selectedTable, cols, whereClose)
+        'frmResults.Show()
         'VBCodeEditor.Text = VBClassManager.VBClass2010CollectionSample(selectedTable, cols)
+    End Sub
+
+    Private Sub GenerateInsertToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GenerateInsertToolStripMenuItem.Click
+        If Not _SelectedDatabase Is Nothing Then
+            Dim objTable As TableNameInfo = CType(TSCmbTables.ComboBox.SelectedItem, TableNameInfo)
+
+            Dim frmResults As New FormResultsDisplay
+            frmResults.TextBoxResults.Text = SQLCodeGen.CreateStoredProcedureSelectAll(objTable)
+            frmResults.Show()
+        End If
+    End Sub
+
+    Private Sub ToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem2.Click
+        If Not _SelectedDatabase Is Nothing Then
+            Dim objTable As TableNameInfo = CType(TSCmbTables.ComboBox.SelectedItem, TableNameInfo)
+
+
+            Dim frmResults As New FormResultsDisplay
+            frmResults.TextBoxResults.Text = SQLCodeGen.CreateStoredProcedureDelete(objTable)
+            frmResults.Show()
+        End If
+    End Sub
+
+    Private Sub SelecteByIdToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SelecteByIdToolStripMenuItem.Click
+        If Not _SelectedDatabase Is Nothing Then
+            Dim objTable As TableNameInfo = CType(TSCmbTables.ComboBox.SelectedItem, TableNameInfo)
+
+            Dim frmResults As New FormResultsDisplay
+            frmResults.TextBoxResults.Text = SQLCodeGen.CreateStoredProcedureSelectById(objTable)
+            frmResults.Show()
+        End If
     End Sub
 End Class
