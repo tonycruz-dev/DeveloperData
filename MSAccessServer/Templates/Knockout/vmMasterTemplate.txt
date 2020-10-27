@@ -1,0 +1,95 @@
+define(['services/logger', 'services/[$tableName]Datacontext', 'knockout'],
+    function (logger, datacontext, ko) {
+
+        var totalRecords = ko.observable();
+        var RecordPerPage = 10;
+        var serachdata = ko.observable();
+
+        var vmData = {
+            data: ko.observableArray(),
+            selectedDetails: ko.observable(),
+            currentPage: ko.observable(1),
+            nextPageEnabled: ko.observable(true),
+            previousPageEnabled: ko.observable(false),
+            nextPage: function () {
+                if (vmData.nextPageEnabled()) {
+                    var np = vmData.currentPage() + 1;
+                    var start = RecordPerPage * (np - 1);
+                    var end = start + RecordPerPage;
+                    vmData.currentPage(np);
+                    return datacontext.get[$tableName]ByPage(vmData, start, end, totalRecords);
+                }
+            },
+            previousPage: function () {
+                if (vmData.previousPageEnabled()) {
+                    var np = vmData.currentPage() - 1;
+                    var start = RecordPerPage * (np - 1);
+                    var end = start + RecordPerPage;
+                    vmData.currentPage(np);
+                    return datacontext.get[$tableName]ByPage(vmData, start, end, totalRecords);
+                }
+            },
+            edit[$tableName]: function (data) {
+                vmData.selectedDetails(data)
+            }
+        };
+        function isPagingEnable() {
+            vmData.previousPageEnabled(vmData.currentPage() > 1);
+            vmData.nextPageEnabled(totalRecords() > RecordPerPage * vmData.currentPage());
+        }
+        var searchByName = function () {
+            var search = serachdata();
+            var totalrecReturned = ko.observable(0);
+            var searchResults = datacontext.searchByName(vmData, 0, RecordPerPage, totalRecords, search, totalrecReturned);
+
+            if (totalrecReturned() > RecordPerPage) {
+                isPagingVisible(true);
+            } else {
+                isPagingVisible(false);
+            }
+
+            return searchResults;
+        };
+        var searchByDetails = function () {
+            var search = serachdata();
+            var totalrecReturned = ko.observable(0);
+
+            var searchResults = datacontext.searchByDetails(vmData, 0, RecordPerPage, totalRecords, search, totalrecReturned);
+
+            if (totalrecReturned() > RecordPerPage) {
+                isPagingVisible(true);
+            } else {
+                isPagingVisible(false);
+            }
+
+            return searchResults;
+        };
+        var refresh = function () {
+            serachdata('')
+            return datacontext.get[$tableName](vmData, 0, RecordPerPage, totalRecords);
+        }
+        saveCategories= function () {
+            var editedCategories = vmData.selectedDetails();
+            datacontext.save[$tableName](editedCategories);
+
+        }
+        var vm = {
+            activate: activate,
+            title: '[$tableName] View',
+            vmData: vmData,
+            serachdata: serachdata,
+            refresh: refresh,
+            searchByDetails: searchByDetails,
+            searchByName: searchByName,
+            save[$tableName]: save[$tableName]
+        }
+        return vm;
+
+        function activate() {
+            logger.log('[$tableName] View Activated', null, '[$tableName]', true);
+            var resultList = datacontext.get[$tableName](vmData, 0, RecordPerPage, totalRecords);
+            vmData.selectedDetails(resultList.data()[0])
+            return resultList 
+        };
+
+    });

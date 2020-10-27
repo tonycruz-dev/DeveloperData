@@ -1,0 +1,60 @@
+Public Class [TABLE-VALUE]Controller
+    Inherits System.Web.Mvc.Controller
+    Private ReadOnly uow As I[TABLE-VALUE]UnitOfWork
+
+    Public Sub New(_uow As I[TABLE-VALUE]UnitOfWork)
+        uow = _uow
+    End Sub
+    '
+    ' GET: /[TABLE-VALUE]s
+
+    Function Index() As ActionResult
+        Return View()
+    End Function
+    Function IndexPaging(Page As Integer?) As PartialViewResult
+        If Page Is Nothing Then
+            Page = 0
+        End If
+        Dim custlist As PagedList(Of [TABLE-VALUE]) = uow.[TABLE-VALUE]Repository.PagingList(Page, My.Settings.RecordsPerPage)
+        Return PartialView("_IndexPaging", custlist)
+    End Function
+    ' GET: /Customer/Edit/5
+    Public Function [TABLE-VALUE]sDetails(ByVal id As String) As PartialViewResult
+        Dim _[TABLE-VALUE] As [TABLE-VALUE] = uow.[TABLE-VALUE]Repository.Find(id)
+        Return PartialView("_[TABLE-VALUE]Details", _[TABLE-VALUE])
+    End Function
+    ' GET: /Customer/Edit/5
+    Public Function Edit[TABLE-VALUE]s(ByVal id As String) As PartialViewResult
+        Dim _[TABLE-VALUE] As [TABLE-VALUE] = uow.[TABLE-VALUE]Repository.Find(id)
+        Return PartialView("_Edit[TABLE-VALUE]s", _[TABLE-VALUE])
+    End Function
+    Function Search[TABLE-VALUE]s(q As String) As PartialViewResult
+        Dim Page = 0
+        Dim custlist As PagedList(Of [TABLE-VALUE]) = uow.[TABLE-VALUE]Repository.SearchList(q, Page, My.Settings.RecordsPerPage)
+        Return PartialView("_IndexPaging", custlist)
+    End Function
+    ' GET: /Customer/Edit/5
+    '<HttpPost()> _
+    Public Sub Save[TABLE-VALUE]s(ByVal _[TABLE-VALUE] As [TABLE-VALUE], Page As Integer)
+        If ModelState.IsValid Then
+            uow.[TABLE-VALUE]Repository.InsertOrUpdate(_[TABLE-VALUE])
+            uow.Save()
+        End If
+    End Sub
+    ' GET: /Customers/Delete/5
+
+    Function Delete[TABLE-VALUE]s(Optional ByVal id As String = Nothing) As PartialViewResult
+        Dim _[TABLE-VALUE] As [TABLE-VALUE] = uow.[TABLE-VALUE]Repository.Find(id)
+        Return PartialView("_Delete[TABLE-VALUE]", _[TABLE-VALUE])
+    End Function
+    Function Delete[TABLE-VALUE]Confirmed(ByVal id As String) As PartialViewResult
+        Dim _[TABLE-VALUE] As [TABLE-VALUE] = uow.[TABLE-VALUE]Repository.Find(id)
+        uow.[TABLE-VALUE]Repository.Delete(id)
+        uow.Save()
+
+        Dim Page = 0
+
+        Dim pagelist As PagedList(Of [TABLE-VALUE]) = uow.[TABLE-VALUE]Repository.PagingList(Page, My.Settings.RecordsPerPage)
+        Return PartialView("_IndexPaging", pagelist)
+    End Function
+End Class

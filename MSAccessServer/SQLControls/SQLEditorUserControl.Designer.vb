@@ -24,6 +24,7 @@ Partial Class SQLEditorUserControl
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SQLEditorUserControl))
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
+        Me.SqlServerEditor = New MSAccessServer.CodeEditor()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.RunQueryButton = New System.Windows.Forms.ToolStripButton()
         Me.toolStripSeparator = New System.Windows.Forms.ToolStripSeparator()
@@ -44,6 +45,7 @@ Partial Class SQLEditorUserControl
         Me.UpdateToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator()
         Me.GenerateInsertToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SelecteByIdToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
@@ -62,8 +64,6 @@ Partial Class SQLEditorUserControl
         Me.PasteToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         Me.toolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
         Me.HelpToolStripButton = New System.Windows.Forms.ToolStripButton()
-        Me.SqlServerEditor = New MSAccessServer.CodeEditor()
-        Me.SelecteByIdToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
@@ -92,6 +92,18 @@ Partial Class SQLEditorUserControl
         Me.SplitContainer1.Size = New System.Drawing.Size(710, 400)
         Me.SplitContainer1.SplitterDistance = 201
         Me.SplitContainer1.TabIndex = 0
+        '
+        'SqlServerEditor
+        '
+        Me.SqlServerEditor.CodeLanguage = MSAccessServer.CodeLanguage.SQLServer
+        Me.SqlServerEditor.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.SqlServerEditor.EnableAutoDragDrop = True
+        Me.SqlServerEditor.Font = New System.Drawing.Font("Consolas", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SqlServerEditor.Location = New System.Drawing.Point(0, 25)
+        Me.SqlServerEditor.Name = "SqlServerEditor"
+        Me.SqlServerEditor.Size = New System.Drawing.Size(710, 176)
+        Me.SqlServerEditor.TabIndex = 3
+        Me.SqlServerEditor.Text = ""
         '
         'ToolStrip1
         '
@@ -241,6 +253,14 @@ Partial Class SQLEditorUserControl
         Me.GenerateInsertToolStripMenuItem.Size = New System.Drawing.Size(228, 22)
         Me.GenerateInsertToolStripMenuItem.Text = "Select Create Procedure"
         '
+        'SelecteByIdToolStripMenuItem
+        '
+        Me.SelecteByIdToolStripMenuItem.Image = CType(resources.GetObject("SelecteByIdToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.SelecteByIdToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Fuchsia
+        Me.SelecteByIdToolStripMenuItem.Name = "SelecteByIdToolStripMenuItem"
+        Me.SelecteByIdToolStripMenuItem.Size = New System.Drawing.Size(228, 22)
+        Me.SelecteByIdToolStripMenuItem.Text = "Select Create Procedure By Id"
+        '
         'ToolStripMenuItem2
         '
         Me.ToolStripMenuItem2.Image = CType(resources.GetObject("ToolStripMenuItem2.Image"), System.Drawing.Image)
@@ -380,26 +400,6 @@ Partial Class SQLEditorUserControl
         Me.HelpToolStripButton.Name = "HelpToolStripButton"
         Me.HelpToolStripButton.Size = New System.Drawing.Size(23, 22)
         Me.HelpToolStripButton.Text = "He&lp"
-        '
-        'SqlServerEditor
-        '
-        Me.SqlServerEditor.CodeLanguage = MSAccessServer.CodeLanguage.SQLServer
-        Me.SqlServerEditor.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.SqlServerEditor.EnableAutoDragDrop = True
-        Me.SqlServerEditor.Font = New System.Drawing.Font("Consolas", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SqlServerEditor.Location = New System.Drawing.Point(0, 25)
-        Me.SqlServerEditor.Name = "SqlServerEditor"
-        Me.SqlServerEditor.Size = New System.Drawing.Size(710, 176)
-        Me.SqlServerEditor.TabIndex = 3
-        Me.SqlServerEditor.Text = ""
-        '
-        'SelecteByIdToolStripMenuItem
-        '
-        Me.SelecteByIdToolStripMenuItem.Image = CType(resources.GetObject("SelecteByIdToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.SelecteByIdToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Fuchsia
-        Me.SelecteByIdToolStripMenuItem.Name = "SelecteByIdToolStripMenuItem"
-        Me.SelecteByIdToolStripMenuItem.Size = New System.Drawing.Size(228, 22)
-        Me.SelecteByIdToolStripMenuItem.Text = "Select Create Procedure By Id"
         '
         'SQLEditorUserControl
         '

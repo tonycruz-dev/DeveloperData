@@ -1,0 +1,12 @@
+Imports System.Data.Entity
+
+Public Class CustomDatabaseInitializer
+    Inherits CreateDatabaseIfNotExists(Of [DATABASE]Context)
+    ' DropCreateDatabaseIfModelChanges(Of [DATABASE]Context)
+    Protected Overrides Sub Seed(context As [DATABASE]Context)
+
+        [SEEDCONTECT]
+        MyBase.Seed(context)
+        context.SaveChanges()
+    End Sub
+End Class

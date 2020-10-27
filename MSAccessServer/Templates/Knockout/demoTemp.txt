@@ -1,0 +1,5 @@
+<div class="containerdetails">
+    <section>
+        <h2 class="page-header" data-bind="text:title"></h2>
+    </section>
+</div>

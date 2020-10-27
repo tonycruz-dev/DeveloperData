@@ -1,0 +1,11 @@
+Partial Public Class [DATABASENAME]DataContext
+    Private Sub Insert[TABLENAME]Info(ByVal instance As [TABLENAME]Info)
+         [INSERTTABLECODE]           
+    End Sub
+    Private Sub Update[TABLENAME]Info(ByVal instance As [TABLENAME]Info)
+       [UPDATETABLECODE] 
+    End Sub
+    Private Sub Delete[TABLENAME]Info(ByVal instance As [TABLENAME]Info)
+        [DELETETABLECODE] 
+    End Sub
+End Class

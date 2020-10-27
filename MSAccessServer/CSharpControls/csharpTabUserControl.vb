@@ -512,12 +512,15 @@ Public Class csharpTabUserControl
     End Sub
 
     Private Sub ClassInfoToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ClassInfoToolStripMenuItem.Click
-        If _SelectedDatabase Is Nothing Then
-            Exit Sub
-        End If
-        Dim objTable As TableNameInfo = CType(TSCmbTables.ComboBox.SelectedItem, TableNameInfo)
-        VBCodeEditor.Text = ManageInfoClass.CreateVBClass2010(objTable)
-
+        'If _SelectedDatabase Is Nothing Then
+        '    Exit Sub
+        'End If
+        'Dim objTable As TableNameInfo = CType(TSCmbTables.ComboBox.SelectedItem, TableNameInfo)
+        'VBCodeEditor.Text = ManageInfoClass.CreateVBClass2010(objTable)
+        'string dir = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName
+        Dim dir = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName
+        Dim tmpLinqTableTemplate As String = dir.ToString & "\Templates\WPF\Bootstrapper.txt"
+        VBCodeEditor.Text = TemplateManager.OpenTemplates(tmpLinqTableTemplate)
     End Sub
 
     Private Sub ClassInfoSelectToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ClassInfoSelectToolStripMenuItem.Click

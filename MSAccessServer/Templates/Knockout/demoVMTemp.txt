@@ -1,0 +1,16 @@
+define(['services/logger'],
+    function (logger) {
+
+
+        var vm = {
+            activate: activate,
+            title: '[$tableName] Page'
+
+        }
+        return vm;
+        function activate() {
+            logger.log('[$tableName] View Activated', null, '[$tableName]', true)
+            return true
+        }
+  
+});

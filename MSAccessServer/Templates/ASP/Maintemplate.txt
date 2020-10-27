@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="Content/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
+    
+    <script src="Scripts/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="Scripts/json2.js" type="text/javascript"></script>
+    <script src="Scripts/jsrender.js" type="text/javascript"></script>
+    <script src="Scripts/bootstrap.min.js" type="text/javascript"></script>
+    <script src="Scripts/utilsRenderPagefunction.js" type="text/javascript"></script>
+    <script type="text/javascript" src="Scripts/[TABLE]/js[TABLE].js"></script>
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="container">
+                <ul class="nav">
+                    <li><a class="brand" href="#">JS North Render</a></li>
+                    <li id="menuhomepage"><a href="Index.htm">Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="breadcrumb">
+                <h3>
+                    Home
+                </h3>
+            </div>
+
+            [MAINPAGELIST]
+            
+            <br />
+
+            <div class="container">
+                <div id="[TABLE]DialogBoxEdit" class="modal hide fade in" style="display: none;">
+                    <div class="modal-header">
+                        <a class="close" data-dismiss="modal">×</a>
+                        <h4>
+                            Edit [TABLE]</h4>
+                    </div>
+                    <div class="modal-body" id="InsertEdit[TABLE]">
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#" class="btn btn-success" id="SaveData">Save [TABLE]</a> <a href="#" class="btn"
+                            data-dismiss="modal" id="closebtn">Close</a>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div id="[TABLE]DetailsDisplay" class="modal hide fade in" style="display: none;">
+                    <div class="modal-header">
+                        <a class="close" data-dismiss="modal">×</a>
+                        <h4>               [TABLE] Details</h4>
+                    </div>
+                    <div class="modal-body" id="[TABLE]DetailsData">
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#" class="btn btn-success" data-dismiss="modal" id="closebtn">Close</a>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div id="[TABLE]DialogBoxAdd" class="modal hide fade in" style="display: none;">
+                    <div class="modal-header">
+                        <a class="close" data-dismiss="modal">×</a>
+                        <h4>
+                            Carete New [TABLE]</h4>
+                    </div>
+                    <div class="modal-body" id="InsertCreat[TABLE]Template">
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#" class="btn btn-success" id="SaveNewData">Save </a><a href="#" class="btn"
+                            data-dismiss="modal" id="closeAddNew">Close</a>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div id="[TABLE]DialogBoxDelete" class="modal hide fade in" style="display: none;">
+                    <div class="modal-header">
+                        <a class="close" data-dismiss="modal">×</a>
+                        <h4>
+                            Delete [TABLE] </h4>
+                    </div>
+                    <div class="modal-body" id="InsertDelete[TABLE]Template">
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#" class="btn btn-success" id="DeleteData">Delete</a> <a href="#" class="btn"
+                            data-dismiss="modal" id="closeDelete">Close</a>
+                    </div>
+                </div>
+            </div>
+
+
+            
+        </div>
+    </div>
+</body>
+</html>

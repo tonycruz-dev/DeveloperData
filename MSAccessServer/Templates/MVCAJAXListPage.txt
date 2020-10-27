@@ -1,0 +1,66 @@
+@ModelType  SKS.Models.PagedList(Of SKS.Models.[TABLE-VALUE])
+<div id="[TABLE-VALUE]ListTable">
+<h2>List Cof Customers</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div class="navbar">
+     <div class="navbar-inner">
+@Using Ajax.BeginForm("Search[TABLE-VALUE]", "[TABLE-VALUE]", New AjaxOptions With {.HttpMethod = "GET", .UpdateTargetId = "[TABLE-VALUE]ListTable", .InsertionMode = InsertionMode.Replace, .OnComplete = "SaveAndClose"}, New With {.class = "navbar-form pull-left"})
+    @<input type="text"  name="q" class="input-medium search-query">
+    @<button type="submit" class="btn">Search</button>
+End Using
+</div>
+</div>
+<div class="bs-docs-example">
+<table class="table table-hover">
+    <tr>
+         [LISTTABLECOLUMNSNAMES]
+        <th></th>
+    </tr>
+
+@For Each item In Model.Entities
+    Dim currentItem = item
+    @<tr>
+        [LISTTABLECOLUMNSVALUES]
+        <td>
+            @Ajax.ActionLink("Edit", "Edit[TABLE-VALUE]", "[TABLE-VALUE]", New With {.id = currentItem.[PRIMARYKEY]},
+                             New AjaxOptions With {.UpdateTargetId = "TableEdit",
+                                 .InsertionMode = InsertionMode.Replace,
+                                 .HttpMethod = "GET", .OnSuccess = "ShowEditDialog"}) |
+            @Ajax.ActionLink("Details", "[TABLE-VALUE]Details", "[TABLE-VALUE]", New With {.id = currentItem.[PRIMARYKEY]}, New AjaxOptions With {.UpdateTargetId = "TableDetails",
+                                 .InsertionMode = InsertionMode.Replace,
+                                 .HttpMethod = "GET", .OnSuccess = "ShowDialog"}) |
+          
+            @Ajax.ActionLink("Delete", "Delete[TABLE-VALUE]", "[TABLE-VALUE]", New With {.id = currentItem.[PRIMARYKEY]}, New AjaxOptions With {.UpdateTargetId = "DeleteItem",
+                                 .InsertionMode = InsertionMode.Replace,
+                                 .HttpMethod = "GET", .OnSuccess = "deleteDialog('#DeleteItem')"}) 
+        </td>
+    </tr>
+Next
+</table>
+    <br />
+    <ul class="pager">
+        <li class="previous">
+    @Code
+        If Model.HasPrevious Then
+         @Ajax.ActionLink("Previous", "IndexPaging", "[TABLE-VALUE]", New With {Key .Page = (Model.CurrentPage - 1)},
+                          New AjaxOptions With {
+                              .UpdateTargetId = "[TABLE-VALUE]ListTable", .HttpMethod = "GET"})
+        End If
+        
+End Code
+   </li>
+    <li class="next">
+@Code
+    If Model.HasNext Then
+       @Ajax.ActionLink("Next", "IndexPaging", "[TABLE-VALUE]", New With {Key .Page = (Model.CurrentPage + 1)}, New AjaxOptions With {
+                              .UpdateTargetId = "[TABLE-VALUE]ListTable", .HttpMethod = "GET"})
+    End If
+End Code
+</li>
+</ul> 
+</div>
+</div> 
+

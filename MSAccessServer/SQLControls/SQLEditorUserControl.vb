@@ -205,4 +205,14 @@ Public Class SQLEditorUserControl
             frmResults.Show()
         End If
     End Sub
+
+    Private Sub ToolStripMenuItem4_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem4.Click
+        If Not _SelectedDatabase Is Nothing Then
+            Dim objTable As TableNameInfo = CType(TSCmbTables.ComboBox.SelectedItem, TableNameInfo)
+
+            Dim frmResults As New FormResultsDisplay
+            frmResults.TextBoxResults.Text = SQLCodeGen.CreateStoredProcedureUpdate(objTable)
+            frmResults.Show()
+        End If
+    End Sub
 End Class

@@ -1,0 +1,40 @@
+<template>
+    <section>
+        <div class="panel panel-default">
+
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <br />
+                        <div class="input-group">
+                            <input type="text" value.bind="datasource.searchCriteria" keyup.delegate="onKeyUp($event)"
+                                   class="form-control" placeholder="[TABLENAME] Name or description">
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-success" tabindex="-1"
+                                        click.trigger="searchAll()">
+                                    Search
+                                </button>
+                                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" tabindex="-1">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu pull-right"></ul>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+
+                    </div>
+                </div>
+                <hr />
+                [TABLE_LIST]
+                <p></p>
+                <hr />
+                <data-source source.bind="datasource"></data-source>
+                <hr />
+                <pager-source source.bind="datasource"></pager-source>
+            </div>
+        </div>
+    </section>
+</template>

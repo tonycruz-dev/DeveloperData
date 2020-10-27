@@ -1,0 +1,58 @@
+﻿<div class="containerdetails">
+    <section>
+        <h2 class="page-header"><i class="fa fa-users"></i> <span data-bind="text:title"></span></h2>
+    </section>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="input-group">
+                <input type="text" data-bind="value: nameFilter, valueUpdate:'afterkeydown'" class="form-control">
+                <div class="input-group-btn">
+                    <button type="button" class="btn btn-success" tabindex="-1">Search</button>
+                    <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" tabindex="-1">
+                        <span class="caret"></span>
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu pull-right">
+                       <li><a href="#" data-bind="click: refresh"><span class="glyphicon glyphicon-refresh"></span> Refresh</a></li>
+                    </ul>
+                </div><!-- /btn-group -->
+
+            </div><!-- /input-group -->
+        </div><!-- /.col-lg-6 -->
+
+    </div>
+    
+    <table class="table table-condensed table-responsive">
+        <thead>
+            <tr>
+                <td>[$tableKey]</td>
+				[$tableDisplayColumnTitles]
+               
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: [$tableName]">
+            <tr>
+
+                <td><a data-bind="attr:{href:'#[$tableName]Edit/'+ [$tableKey]()}, text: [$tableKey]"> </a> </td>
+				[$tableDisplayColumnList]
+                
+            </tr>
+        </tbody>
+    </table>
+    <p></p>
+
+    <div>
+        <!-- ko if: vmData.data().length > vmData.pageSize() -->
+        <div>
+            <ul class="pager">
+                <li data-bind="css: { disabled: vmData.pageIndex() === 0 }">
+                    <a href="#" data-bind="click: vmData.previousPage">Previous</a>
+                </li>
+                <li data-bind="css: { disabled: vmData.pageIndex() === vmData.maxPageIndex() }">
+                    <a href="#" data-bind="click: vmData.nextPage">Next</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /ko -->
+    </div>
+</div>

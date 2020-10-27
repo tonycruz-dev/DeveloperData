@@ -1,0 +1,74 @@
+﻿define(['services/logger', 'services/[$tableNamelow]DataContext'],
+    function (logger, datacontext) {
+
+
+        var all[$tableName] = ko.observableArray();
+        var nameFilter = ko.observable('').extend({ throttle: 500 })
+        nameFilter.subscribe(searchAll);
+      
+
+     
+        var serachdata = ko.observable();
+        var vmData = {
+            data: ko.observableArray(),
+            selected[$tableNameSingle]: ko.observable(),
+            pageSize: ko.observable(10),
+            pageIndex: ko.observable(0),
+            nextPageEnabled: ko.observable(true),
+            previousPageEnabled: ko.observable(false),
+            nextPage: function () {
+                if (vmData.pageIndex() < vmData.maxPageIndex()) {
+                    vmData.pageIndex(vmData.pageIndex() + 1);
+                }
+            },
+            maxPageIndex: function () {
+                var results = Math.ceil(vmData.data().length / vmData.pageSize()) - 1;
+                return results;
+            },
+            previousPage: function () {
+                if (vmData.pageIndex() > 0) {
+                    vmData.pageIndex(vmData.pageIndex() - 1);
+                }
+            },
+            save[$tableNameSingle]: function () {
+               var edited[$tableNameSingle] = vmData.selected[$tableNameSingle]();
+               // datacontext.save[$tableNameSingle](edited[$tableNameSingle]);
+            },
+            edit[$tableNameSingle]: function (data) {
+                vmData.selected[$tableNameSingle](data)
+            }
+        };
+        var [$tableNamelow] = ko.computed(function () {
+            var size = vmData.pageSize();
+            var start = vmData.pageIndex() * size;
+            return vmData.data.slice(start, start + size);
+        });
+
+        function searchAll() {
+            var filter = nameFilter().trim().toLowerCase();
+            var searchResults = datacontext.getAll[$tableName]Filter(vmData, filter);
+            if (searchResults.data()[0]) {
+                vmData.selected[$tableNameSingle](searchResults.data()[0])
+            }
+
+            return searchResults;
+        };
+      
+       
+        var vm = {
+            activate: activate,
+            title: '[$tableName] View',
+            vmData: vmData,
+            viewAttached: viewAttached,
+            [$tableNamelow]: [$tableNamelow],
+            nameFilter: nameFilter
+        }
+        return vm;
+        function activate() {
+            logger.log('[$tableName] View Activated', null, '[$tableNamelow]', true);
+            var results = datacontext.getAll[$tableName](vmData);
+            vmData.selected[$tableNameSingle](results.data()[0])
+            return results;
+        }
+     
+    });

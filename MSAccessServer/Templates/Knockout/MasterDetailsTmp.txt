@@ -1,0 +1,58 @@
+<div class="containerdetails">
+    <section>
+        <h4 class="page-header" data-bind="text:title"> </h4>
+    </section>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="input-group">
+                <input type="text" data-bind="value: serachdata" class="form-control">
+                <div class="input-group-btn">
+                    <button type="button" class="btn btn-success" tabindex="-1">Search</button>
+                    <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" tabindex="-1">
+                        <span class="caret"></span>
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu pull-right">
+                        <li><a href="#" data-bind="click: searchByCompany">Company Name</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#" data-bind="click: refresh"><span class="glyphicon glyphicon-refresh"></span> Refresh</a></li>
+                    </ul>
+                </div><!-- /btn-group -->
+
+            </div><!-- /input-group -->
+
+            <!--<td><a href="#" data-bind="click: $root.vmData.editCategory, text: CategoryName"> </a> </td>-->
+
+           [$MASTERTABLE]
+
+
+            <p></p>
+            <ul class="pager">
+                <li data-bind="css: {'disabled': !vmData.previousPageEnabled()}">
+                    <a href="#" data-bind="click: vmData.previousPage">Previous</a>
+                </li>
+                <li data-bind="css: {'disabled': !vmData.nextPageEnabled()}">
+                    <a href="#" data-bind="click: vmData.nextPage">Next</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-md-8">
+            <div class="row">
+                <form class="form-horizontal" role="form">
+                    <div data-bind="with: vmData.selectedDetails">
+                       
+                          [$DETAILSTABLE]
+
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-2">
+                                <a class="btn btn-default" data-bind="click:saveCustomer"><span class="glyphicon glyphicon-floppy-save"> </span> Save</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+  </div>

@@ -1,0 +1,27 @@
+﻿<div class="containerdetails">
+    <section>
+        <h4 class="page-header" data-bind="text:title"> </h4>
+    </section>
+        <div class="row">
+            <div class="col-md-4">
+
+                [$MASTERTABLE]
+
+               <p></p>
+                <ul class="pager">
+                    <li data-bind="css: {'disabled': !displayData.previousPageEnabled()}">
+                        <a href="#" data-bind="click: displayData.previousPage">Previous</a>
+                    </li>
+                    <li data-bind="css: {'disabled': !displayData.nextPageEnabled()}">
+                        <a href="#" data-bind="click: displayData.nextPage">Next</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-md-8">
+                <div class="row" >
+                    [$DETAILSTABLE]
+                </div>
+            </div>
+        </div>
+</div>

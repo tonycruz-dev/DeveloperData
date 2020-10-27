@@ -275,6 +275,25 @@ Public Class SQLCodeGen
         sb.AppendLine("    END")
         Return sb.ToString
     End Function
+    Public Shared Function CreateStoredProcedureUpdate(ByVal DT As TableNameInfo) As String
+        Dim sb As New StringBuilder()
+        Dim colPk = (From c In DT.ListColumn Where c.IsPrimary_Key = True Select c).Take(1).SingleOrDefault
+        sb.AppendLine("CREATE PROCEDURE [dbo].[sp_" & DT.TableValue & "_Update]")
+        Dim sbParam As New StringBuilder()
+        For Each col In DT.ListColumn
+            sbParam.AppendLine("    @" & col.ColumnValue & " " & col.TypeSQL & ",")
+        Next
+        Dim mylastComar = sbParam.ToString.LastIndexOf(",")
+        Dim StrParams = sbParam.Remove(mylastComar, 1).ToString
+
+        sb.AppendLine("    " & StrParams)
+        sb.AppendLine("    AS")
+        sb.AppendLine("    BEGIN")
+        sb.AppendLine("       set nocount on;")
+        sb.AppendLine("       " & CreateUpdate(DT))
+        sb.AppendLine("    END")
+        Return sb.ToString
+    End Function
 
 
 

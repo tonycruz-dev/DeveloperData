@@ -1,0 +1,61 @@
+﻿define(['repository/[$tableNamelow]Repository', 'services/logger', 'models/models'],
+    function (Rep, logger, models) {
+
+     
+
+        var getAll[$tableNameSingleLow] = function (vmdata) {
+            return vmdata.data($.map(Rep.[$tableNamelow]Repository, function (rec) { return new models.[$tableNameSingleLow]Model(rec) }));
+       };
+        var getAll[$tableNameSingleLow]Filter = function (vmdata, filter) {
+           
+            if (!filter == '') {
+                var searchResults = _.filter(Rep.[$tableNamelow]Repository,
+                     function (item) {
+                         return _.str.include(cust.CompanyName.trim().toUpperCase(), filter.trim().toUpperCase()) ||
+                             _.str.include(cust.ContactName.trim().toUpperCase(), filter.trim().toUpperCase()) ||
+                             _.str.include(cust.Country.trim().toUpperCase(), filter.trim().toUpperCase());
+                     });
+
+                return vmdata.data($.map(searchResults, function (rec) { return new models.[$tableNameSingleLow]Model(rec) }));
+            }
+            else {
+                return vmdata.data($.map(Rep.[$tableNamelow]Repository, function (rec) { return new models.[$tableNameSingleLow]Model(rec) }));
+            }
+        };
+      
+        
+        var get[$tableName]ByID = function ([$tableKey], customerObservable) {
+            
+            var result = _.find(Rep.[$tableNamelow]Repository, function (rec) { return rec.[$tableKey] === [$tableKey] });
+            var mapItem = new models.[$tableNameSingleLow]Model(result);
+            return [$tableNameSingleLow]Observable(mapItem);
+        };
+        // save [$tableNameSingleLow]
+        var save[$tableNameSingleLow] = function ([$tableNameSingleLow]) {
+            var result[$tableNameSingleLow] = _.find(Rep.[$tableNamelow]Repository, function (rec) { return rec.[$tableKey] === [$tableNameSingleLow].[$tableKey]() })
+             // update repository      
+          //  result[$tableNameSingleLow].CustomerID = customer.CustomerID()
+          //  result[$tableNameSingleLow].CompanyName = customer.CompanyName();
+        
+        };
+
+  //      var getCustomerOrders = function (customerId, selectedOrders) {
+ //           //step 1 get list of customer Orders
+  //          var listCustomerOrders = _.filter(nwOrdRep.customerOrders, function (co) {return co.CustomerID === customerId;});
+            // step 2 get customer
+  //          return selectedOrders($.map(listCustomerOrders,function (co) {return new models.OrderItem(co)}));
+
+        };
+
+        var datacontext = {
+            get[$tableName]ByID: get[$tableName]ByID,
+            save[$tableNameSingleLow]: save[$tableNameSingleLow],
+         //   getCustomerOrders: getCustomerOrders,
+            getAll[$tableNameSingleLow]: getAll[$tableNameSingleLow],
+            getAll[$tableNameSingleLow]Filter: getAll[$tableNameSingleLow]Filter
+        };
+
+        return datacontext;
+
+        
+    });

@@ -1,0 +1,72 @@
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="[TABLENAME]"),  _
+ Global.System.Runtime.Serialization.DataContractAttribute()>  _
+Partial Public Class [TABLEVALUE]Info
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	[WRITE_LINQ_VAR]
+       	
+	
+	Private serializing As Boolean
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+         [COLUMNS_CHANGE_Extensibility_Method_Definitions]
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me.Initialize
+	End Sub
+	
+	[LINQ_PROPERTIES]
+	
+              
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+	
+        [LINQ_ATTACH_AND_DETACH_ENTITYSETPROPERTIES]
+	
+	'
+	[INITIALIZE_LINQ_ENTITY] 
+		
+	
+	<Global.System.Runtime.Serialization.OnDeserializingAttribute(),  _
+	 Global.System.ComponentModel.EditorBrowsableAttribute(EditorBrowsableState.Never)>  _
+	Public Sub OnDeserializing(ByVal context As StreamingContext)
+		Me.Initialize
+	End Sub
+	
+	<Global.System.Runtime.Serialization.OnSerializingAttribute(),  _
+	 Global.System.ComponentModel.EditorBrowsableAttribute(EditorBrowsableState.Never)>  _
+	Public Sub OnSerializing(ByVal context As StreamingContext)
+		Me.serializing = true
+	End Sub
+	
+	<Global.System.Runtime.Serialization.OnSerializedAttribute(),  _
+	 Global.System.ComponentModel.EditorBrowsableAttribute(EditorBrowsableState.Never)>  _
+	Public Sub OnSerialized(ByVal context As StreamingContext)
+		Me.serializing = false
+	End Sub
+End Class

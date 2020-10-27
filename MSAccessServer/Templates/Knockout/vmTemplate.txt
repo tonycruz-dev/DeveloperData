@@ -1,0 +1,56 @@
+﻿define(['services/logger', 'services/datacontext', 'knockout'],
+    function (logger, datacontext, ko) {
+            
+        var totalRecords = ko.observable();
+        var RecordPerPage = 10;
+
+        var vmData = {
+            data: ko.observableArray(),
+            selectedDetails: ko.observable(),
+            currentPage: ko.observable(1),
+            nextPageEnabled: ko.observable(true),
+            previousPageEnabled: ko.observable(false),
+            nextPage: function () {
+                if (vmData.nextPageEnabled()) {
+                    var np = vmData.currentPage() + 1;
+                    var start = RecordPerPage * (np - 1);
+                    var end = start + RecordPerPage;
+                    vmData.currentPage(np);
+                    return datacontext.get[$tableName]ByPage(vmData, start, end, totalRecords);
+                }
+            },
+            previousPage: function () {
+                if (vmData.previousPageEnabled()) {
+                    var np = vmData.currentPage() - 1;
+                    var start = RecordPerPage * (np - 1);
+                    var end = start + RecordPerPage;
+                    vmData.currentPage(np);
+                    return datacontext.get[$tableName]ByPage(vmData, start, end, totalRecords);
+                }
+            },
+            save[$tableName]: function () {
+                var edited[$tableName] = vmData.selectedDetails();
+                datacontext.update[$tableName]s(edited[$tableName]);
+
+            },
+            edit[$tableName]s: function (data) {
+                vmData.selectedDetails(data)
+            }
+        };
+        function isPagingEnable() {
+            vmData.previousPageEnabled(vmData.currentPage() > 1);
+            vmData.nextPageEnabled(totalRecords() > RecordPerPage * vmData.currentPage());
+        }
+        var vm = {
+            activate: activate,
+            title: '[$tableName]s View',
+            vmData: vmData
+        }
+        return vm;
+
+        function activate() {
+            logger.log('Customers View Activated', null, '[$tableName]s', true);
+            return datacontext.get[$tableName]ByPage(vmData, 0, RecordPerPage, totalRecords);
+        };
+
+    });

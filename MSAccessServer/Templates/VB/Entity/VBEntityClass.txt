@@ -1,0 +1,2 @@
+Imports System.Data.Entity.ModelConfiguration
+[CLASSENTITY]
