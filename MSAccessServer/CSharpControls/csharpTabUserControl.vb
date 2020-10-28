@@ -524,11 +524,14 @@ Public Class csharpTabUserControl
     End Sub
 
     Private Sub ClassInfoSelectToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ClassInfoSelectToolStripMenuItem.Click
-        If _SelectedDatabase Is Nothing Then
-            Exit Sub
-        End If
-        Dim objTable As TableNameInfo = CType(TSCmbTables.ComboBox.SelectedItem, TableNameInfo)
-        VBCodeEditor.Text = ManageInfoClass.InfoSelect(objTable, _SelectedDatabase.DatabaseName)
+        'If _SelectedDatabase Is Nothing Then
+        '    Exit Sub
+        'End If
+        'Dim objTable As TableNameInfo = CType(TSCmbTables.ComboBox.SelectedItem, TableNameInfo)
+        'VBCodeEditor.Text = ManageInfoClass.InfoSelect(objTable, _SelectedDatabase.DatabaseName)
+        Dim dir = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName
+        Dim tmpLinqTableTemplate As String = dir.ToString & "\Templates\WPF\APIHelper.txt"
+        VBCodeEditor.Text = TemplateManager.OpenTemplates(tmpLinqTableTemplate)
     End Sub
 
     Private Sub ClassInfoUpdateToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ClassInfoUpdateToolStripMenuItem.Click

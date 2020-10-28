@@ -446,6 +446,7 @@
     <Content Include="Templates\VB\Entity\VBEntityClass.txt" />
     <Content Include="Templates\VB\Entity\VBEntityConfiguration.txt" />
     <Content Include="Templates\VB\Entity\VBEntityDataContext.txt" />
+    <Content Include="Templates\WPF\APIHelper.txt" />
     <Content Include="Templates\WPF\Bootstrapper.txt" />
     <None Include="Resources\script-friend.png" />
     <None Include="Resources\script-info.png" />

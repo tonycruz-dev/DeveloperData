@@ -28,6 +28,9 @@ Partial Class FormResultsDisplay
         '
         'TextBoxResults
         '
+        Me.TextBoxResults.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TextBoxResults.Font = New System.Drawing.Font("Courier New", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBoxResults.ForeColor = System.Drawing.Color.RoyalBlue
         Me.TextBoxResults.Location = New System.Drawing.Point(3, 1)

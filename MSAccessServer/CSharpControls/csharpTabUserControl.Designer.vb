@@ -34,6 +34,7 @@ Partial Class csharpTabUserControl
         Me.TSCmbTables = New System.Windows.Forms.ToolStripComboBox()
         Me.ToolStripDropDownButton1 = New System.Windows.Forms.ToolStripDropDownButton()
         Me.VBModelToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem10 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ModelInotifyToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VBClass2010SampleData = New System.Windows.Forms.ToolStripMenuItem()
         Me.VBClass2010XmlSampleToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -116,7 +117,6 @@ Partial Class csharpTabUserControl
         Me.PasteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
         Me.VBCodeEditor = New MSAccessServer.CodeEditor()
-        Me.ToolStripMenuItem10 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStrip1.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -199,6 +199,13 @@ Partial Class csharpTabUserControl
         Me.VBModelToolStripMenuItem.Name = "VBModelToolStripMenuItem"
         Me.VBModelToolStripMenuItem.Size = New System.Drawing.Size(243, 22)
         Me.VBModelToolStripMenuItem.Text = "C# Class v2010"
+        '
+        'ToolStripMenuItem10
+        '
+        Me.ToolStripMenuItem10.Image = Global.MSAccessServer.My.Resources.Resources.vbclassinfo
+        Me.ToolStripMenuItem10.Name = "ToolStripMenuItem10"
+        Me.ToolStripMenuItem10.Size = New System.Drawing.Size(243, 22)
+        Me.ToolStripMenuItem10.Text = "Class DTO"
         '
         'ModelInotifyToolStripMenuItem
         '
@@ -302,14 +309,14 @@ Partial Class csharpTabUserControl
         Me.ClassInfoToolStripMenuItem.Image = Global.MSAccessServer.My.Resources.Resources.vbclassinfo
         Me.ClassInfoToolStripMenuItem.Name = "ClassInfoToolStripMenuItem"
         Me.ClassInfoToolStripMenuItem.Size = New System.Drawing.Size(243, 22)
-        Me.ClassInfoToolStripMenuItem.Text = "Class Info"
+        Me.ClassInfoToolStripMenuItem.Text = "Bootstrapper WPF"
         '
         'ClassInfoSelectToolStripMenuItem
         '
         Me.ClassInfoSelectToolStripMenuItem.Image = Global.MSAccessServer.My.Resources.Resources.vbclassinfo
         Me.ClassInfoSelectToolStripMenuItem.Name = "ClassInfoSelectToolStripMenuItem"
         Me.ClassInfoSelectToolStripMenuItem.Size = New System.Drawing.Size(243, 22)
-        Me.ClassInfoSelectToolStripMenuItem.Text = "Class info Select"
+        Me.ClassInfoSelectToolStripMenuItem.Text = "Api Helper"
         '
         'ClassInfoUpdateToolStripMenuItem
         '
@@ -767,13 +774,6 @@ Partial Class csharpTabUserControl
         Me.VBCodeEditor.Size = New System.Drawing.Size(867, 459)
         Me.VBCodeEditor.TabIndex = 5
         Me.VBCodeEditor.Text = ""
-        '
-        'ToolStripMenuItem10
-        '
-        Me.ToolStripMenuItem10.Image = Global.MSAccessServer.My.Resources.Resources.vbclassinfo
-        Me.ToolStripMenuItem10.Name = "ToolStripMenuItem10"
-        Me.ToolStripMenuItem10.Size = New System.Drawing.Size(243, 22)
-        Me.ToolStripMenuItem10.Text = "Class DTO"
         '
         'csharpTabUserControl
         '
